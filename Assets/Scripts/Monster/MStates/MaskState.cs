@@ -1,24 +1,17 @@
 using UnityEngine;
 
-public class MaskState : MonoBehaviour
+public abstract class MaskState : MonoBehaviour
 {
-    public virtual void  OnEnter()
-    {
 
+    public abstract MaskType MaskType { get; }
+    public virtual void OnEnter() 
+    {
+        MonsterMain.Instance.CurrentMask = MaskType;
     }
 
-    public virtual void Do()
-    {
+    public virtual void Do() { }
 
-    }
+    public virtual void FixedDo() { }
 
-    public virtual void FixedDo()
-    {
-
-    }
-
-    public virtual void OnExit()
-    {
-
-    }
+    public virtual void OnExit() { }
 }

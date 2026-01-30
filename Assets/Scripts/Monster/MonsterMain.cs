@@ -5,11 +5,10 @@ public class MonsterMain : MonoBehaviour
     private static MonsterMain instance = null;
     public static MonsterMain Instance => instance;
 
-    public MonsterBrain MonsterBrain;
-    public MonsterBrain MonsterTime;
+    public MonsterStateBrain MonsterBrain;
+    public MonsterStateBrain MonsterTime;
     public MonsterMovement MonsterMovement;
-
-    public enum MaskType {Red, Green, Blue }
+    public MonsterVisual MonsterVisual;
 
     public MaskType CurrentMask;
 
@@ -26,7 +25,4 @@ public class MonsterMain : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
-
-
 }

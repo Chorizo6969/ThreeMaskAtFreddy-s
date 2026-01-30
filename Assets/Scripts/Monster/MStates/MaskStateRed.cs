@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class MaskStateRed : MaskState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override MaskType MaskType => MaskType.Red;
+    public override void OnEnter()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnEnter();
     }
 }

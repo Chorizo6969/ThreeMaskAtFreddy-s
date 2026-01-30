@@ -2,15 +2,10 @@
 
 public class MaskStateBlue : MaskState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override MaskType MaskType => MaskType.Blue;
+    public override void OnEnter()
     {
-        
+        base.OnEnter();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
