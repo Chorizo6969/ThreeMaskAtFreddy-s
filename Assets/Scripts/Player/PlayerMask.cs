@@ -9,17 +9,17 @@ public class PlayerMask : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Keypad1) && !_isWearingMask)
         {
             print("1");
-            _isWearingMask = true;
+            _isWearingMask = false;
         }
         if (Input.GetKeyDown(KeyCode.Keypad2) && !_isWearingMask)
         {
             print("2");
-            _isWearingMask = true;
+            _isWearingMask = false;
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) && !_isWearingMask)
         {
             print("3");
-            _isWearingMask = true;
+            _isWearingMask = false;
         }
     }
 }
