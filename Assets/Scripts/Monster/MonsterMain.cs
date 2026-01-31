@@ -9,6 +9,7 @@ public class MonsterMain : MonoBehaviour
     public MonsterStateBrain MonsterTime;
     public MonsterMovement MonsterMovement;
     public MonsterVisual MonsterVisual;
+    public MonsterEncounter MonsterEncounter;
 
     public GameObject Player;
 

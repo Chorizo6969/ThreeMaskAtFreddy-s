@@ -1586,6 +1586,7 @@ GameObject:
   - component: {fileID: 1531176227}
   - component: {fileID: 1531176226}
   - component: {fileID: 1531176225}
+  - component: {fileID: 1531176230}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6027488a5bda44483f4b3244ab725d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
+  currentRow: 0
   rows:
   - positionsList:
     - {fileID: 1333840484}
@@ -1712,9 +1714,22 @@ MonoBehaviour:
   MonsterTime: {fileID: 1531176227}
   MonsterMovement: {fileID: 1531176228}
   MonsterVisual: {fileID: 1531176225}
+  MonsterEncounter: {fileID: 1531176230}
   Player: {fileID: 181428512}
-  DefaultRaw: 3
+  DefaultRow: 3
   DefaultMaskState: {fileID: 1717160328}
+--- !u!114 &1531176230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531176220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046f712559401e2498d3a371ddfb3ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterEncounter
 --- !u!1 &1713456523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2023,7 @@ Transform:
   m_GameObject: {fileID: 1809021431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.028, z: -0.207}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

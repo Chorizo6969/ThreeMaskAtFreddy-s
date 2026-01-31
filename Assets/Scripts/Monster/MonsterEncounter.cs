@@ -13,11 +13,12 @@ public class MonsterEncounter : MonoBehaviour
 
     private void KillPlayer()
     {
-
+        Debug.Log("GameOver");
     }
 
     private void Flee()
     {
+        MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
         MonsterMain.Instance.MonsterMovement.MonsterGoToThisRow(3);
     }
 }
