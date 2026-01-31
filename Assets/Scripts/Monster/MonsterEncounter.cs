@@ -2,23 +2,26 @@ using UnityEngine;
 
 public class MonsterEncounter : MonoBehaviour
 {
+    public bool IsWatchedByPlayer;
 
+    [SerializeField] private float delayToRemoveEachFlee = 0.4f;
 
-    public void CheckPlayerMask()
+    public bool CheckIsSamePlayerMask()
     {
-        // look same direction && same mask Flee
-        // else Kill player
-        Flee();
+        //return false if not, if yes, return true
+        return true;
     }
 
-    private void KillPlayer()
+    public void KillPlayer()
     {
-        Debug.Log("GameOver");
+        Debug.Log("GameOver, playerDead");
     }
 
-    private void Flee()
+    public void Flee()
     {
         MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
         MonsterMain.Instance.MonsterMovement.MonsterGoToThisRow(3);
+        if(MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions > 4f) MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions = MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions - delayToRemoveEachFlee;
+        //La lampe du bureau clignote, le monstre se casse
     }
 }

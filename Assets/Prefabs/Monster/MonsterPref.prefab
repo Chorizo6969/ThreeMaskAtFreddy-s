@@ -72,7 +72,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722256746666175529}
-  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
+  m_Mesh: {fileID: -1302901452187926302, guid: fdb8653b239c22243a36737672e5bec5, type: 3}
 --- !u!23 &917795633155661786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476297782724138583}
-  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
+  m_Mesh: {fileID: -1302901452187926302, guid: fdb8653b239c22243a36737672e5bec5, type: 3}
 --- !u!23 &2332743173384725648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   MonsterMovement: {fileID: 7124279577804892754}
   MonsterVisual: {fileID: 9084432894410055605}
   MonsterEncounter: {fileID: 790916149630811731}
-  Player: {fileID: 0}
+  PlayerCam: {fileID: 0}
   DefaultRow: 3
   DefaultMaskState: {fileID: 5412035401969533984}
   IsWatchedByPlayer: 0
@@ -534,6 +534,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   _currentPos: {fileID: 0}
+  _valideDirection: 
 --- !u!114 &4046012502805756312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +666,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9157204205268764204}
-  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
+  m_Mesh: {fileID: -1302901452187926302, guid: fdb8653b239c22243a36737672e5bec5, type: 3}
 --- !u!23 &2739059005659847131
 MeshRenderer:
   m_ObjectHideFlags: 0
