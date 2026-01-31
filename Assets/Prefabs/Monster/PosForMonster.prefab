@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 7338294651116742248}
   - component: {fileID: 369566265205215975}
   - component: {fileID: 1103550341153633793}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfe54915bf44924f9853a8ac8949fdc, type: 2}
+  - {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 0
+  IsWatched: 0
+  _renderer: {fileID: 7338294651116742248}
 --- !u!1 &2891591998444364985
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +545,7 @@ GameObject:
   - component: {fileID: 7608886344775838517}
   - component: {fileID: 6419414051673036054}
   - component: {fileID: 260339511120656938}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +600,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfe54915bf44924f9853a8ac8949fdc, type: 2}
+  - {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -656,6 +658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 1
+  IsWatched: 0
+  _renderer: {fileID: 7608886344775838517}
 --- !u!1 &2912619121196319566
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +897,7 @@ GameObject:
   - component: {fileID: 3777209241353696527}
   - component: {fileID: 5588508463515702027}
   - component: {fileID: 2982515064275249418}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +952,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfe54915bf44924f9853a8ac8949fdc, type: 2}
+  - {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1006,6 +1010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 2
+  IsWatched: 0
+  _renderer: {fileID: 3777209241353696527}
 --- !u!1 &3558428044736675524
 GameObject:
   m_ObjectHideFlags: 0
