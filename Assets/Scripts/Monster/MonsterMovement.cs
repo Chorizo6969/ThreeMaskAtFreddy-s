@@ -10,6 +10,8 @@ public class MonsterMovement : MonoBehaviour
         public List<GameObject> positionsList;
     }
 
+    public int currentRow;
+
     [SerializeField] private List<Row> rows;
     [SerializeField] private int _currentRowListIndex; 
     [SerializeField] private GameObject _currentPos;
@@ -17,6 +19,7 @@ public class MonsterMovement : MonoBehaviour
     public void MonsterGoToThisRow(int _row)
     {
         int _meshNumber = _row;
+        currentRow = _row;
         _currentRowListIndex = _row - 1;
         MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
         transform.position = GetRandomPosFromRow(rows[_row-1].positionsList);
@@ -38,6 +41,7 @@ public class MonsterMovement : MonoBehaviour
         {
             _currentRowListIndex--;
         }
+        currentRow = _currentRowListIndex + 1;
     }
 
     private Vector3 GetRandomPosFromRow(List<GameObject> _posList)
