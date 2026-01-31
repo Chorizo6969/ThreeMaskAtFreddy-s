@@ -9,13 +9,27 @@ public class DirectionLookDetector : MonoBehaviour
 
     private void Update()
     {
-        if (!IsWatched)
+        if (MonsterMain.Instance != null)
         {
-            _renderer.material.color = Color.black;
+            if (!IsWatched)
+            {
+                if (!MonsterMain.Instance.MonsterMovement.ValideDirection.Contains(DirectionType))
+                {
+                    MonsterMain.Instance.MonsterMovement.AddToValideDirection(DirectionType);
+                    _renderer.material.color = Color.black;
+                }
+
+            }
+            else
+            {
+                if (MonsterMain.Instance.MonsterMovement.ValideDirection.Contains(DirectionType))
+                {
+                    MonsterMain.Instance.MonsterMovement.RemoveFromValideDirection(DirectionType);
+                    _renderer.material.color = Color.red;
+                }
+
+            }
         }
-        else
-        {
-            _renderer.material.color = Color.red;
-        }
+
     }
 }

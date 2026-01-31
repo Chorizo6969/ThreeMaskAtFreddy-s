@@ -40,5 +40,9 @@ public class MonsterMain : MonoBehaviour
         //StartMask
         MonsterBrain.SwitchToThisMaskState(DefaultMaskState);
 
+        //StartTimer
+        MonsterTimer.CurrentDelayBetweenActions = DefaultDelayBetweenActions;
+        MonsterTimer.StartTimer();
+
     }
 }

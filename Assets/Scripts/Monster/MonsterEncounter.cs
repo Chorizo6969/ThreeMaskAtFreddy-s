@@ -4,6 +4,8 @@ public class MonsterEncounter : MonoBehaviour
 {
     public bool IsWatchedByPlayer;
 
+    [SerializeField] private float delayToRemoveEachFlee = 0.4f;
+
     public bool CheckIsSamePlayerMask()
     {
         //return false if not, if yes, return true
@@ -19,7 +21,7 @@ public class MonsterEncounter : MonoBehaviour
     {
         MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
         MonsterMain.Instance.MonsterMovement.MonsterGoToThisRow(3);
-        if(MonsterMain.Instance.MonsterTimer.DelayBetweenActions > 4f) MonsterMain.Instance.MonsterTimer.DelayBetweenActions = MonsterMain.Instance.MonsterTimer.DelayBetweenActions - 0.4f;
+        if(MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions > 4f) MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions = MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions - delayToRemoveEachFlee;
         //La lampe du bureau clignote, le monstre se casse
     }
 }

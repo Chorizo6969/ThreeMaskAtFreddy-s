@@ -561,6 +561,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3796093578420197843, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
   m_PrefabInstance: {fileID: 343370292}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &496196764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6123459468570785478, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
+  m_PrefabInstance: {fileID: 1536489190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4e1d5b10b6ac047bbc68367a6184b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterTimer
 --- !u!1 &732424134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1208,10 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1451053814}
+    - target: {fileID: 5682339796277009989, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
+      propertyPath: MonsterTimer
+      value: 
+      objectReference: {fileID: 496196764}
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[0].PositionsList.Array.data[0]'
       value: 
