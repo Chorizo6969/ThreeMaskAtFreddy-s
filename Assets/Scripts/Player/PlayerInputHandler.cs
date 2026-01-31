@@ -4,10 +4,12 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] private PlayerMask playerMask;
+    [SerializeField] private PlayerMovement _playerMovement;
 
     public void OnEquipMask(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+        if (_playerMovement.Position != 1) return;
 
         int maskIndex = GetMaskIndexFromInput(context);
         if (maskIndex == -1) return;
