@@ -336,7 +336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5732760545872631634
 Transform:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 8476297782724138583}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -360,7 +360,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476297782724138583}
-  m_Mesh: {fileID: -1302901452187926302, guid: fdb8653b239c22243a36737672e5bec5, type: 3}
+  m_Mesh: {fileID: 3209554841506446676, guid: 5da46a0c458098347baaef5868f1370e, type: 3}
 --- !u!23 &2332743173384725648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -434,13 +434,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8496612958367440131}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.04866063, y: -0.016755192, z: -0.32513663, w: 0.94426566}
+  m_LocalPosition: {x: -0.936, y: -0.185, z: 1.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5732760545872631634}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.9, y: 0, z: -38}
 --- !u!1 &8768331341919752519
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   MonsterMovement: {fileID: 7124279577804892754}
   MonsterVisual: {fileID: 9084432894410055605}
   MonsterEncounter: {fileID: 790916149630811731}
-  PlayerCam: {fileID: 0}
+  Player: {fileID: 0}
   DefaultRow: 3
   DefaultMaskState: {fileID: 5412035401969533984}
   DefaultDelayBetweenActions: 8
@@ -644,7 +644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4746802242881688680
 Transform:
   m_ObjectHideFlags: 0
