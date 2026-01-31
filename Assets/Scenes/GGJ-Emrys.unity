@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 181428513}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 181428512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1055,7 +1055,7 @@ Transform:
   m_GameObject: {fileID: 779159988}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18, y: 0, z: -9.999999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1118,7 +1118,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779159988}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
 --- !u!1 &887248589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1602,7 @@ Transform:
   m_GameObject: {fileID: 1531176220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 2, z: -1.8000002}
+  m_LocalPosition: {x: 8, y: 2, z: -12.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1681,20 +1681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6027488a5bda44483f4b3244ab725d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
-  rows:
-  - positions:
-    - {fileID: 1333840488}
-    - {fileID: 1724515774}
-    - {fileID: 227870230}
-  - positions:
-    - {fileID: 355528267}
-    - {fileID: 1126267599}
-    - {fileID: 73028519}
-  - positions:
-    - {fileID: 129963649}
-    - {fileID: 602005138}
-    - {fileID: 1713456527}
-  _currentPos: 0
+  rows: []
+  _currentRow: 0
+  _currentPos: {fileID: 0}
 --- !u!114 &1531176229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,6 +1700,7 @@ MonoBehaviour:
   MonsterTime: {fileID: 1531176227}
   MonsterMovement: {fileID: 1531176228}
   MonsterVisual: {fileID: 1531176225}
+  Player: {fileID: 181428512}
   defaultPos: 3
   defaultMaskState: {fileID: 1717160328}
 --- !u!1 &1713456523
@@ -2102,7 +2092,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970668067}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
 --- !u!1 &1999798962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2183,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999798962}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7125225510432041111, guid: 84c9c6ba93b347b41a382ba4e73a9f32, type: 3}
 --- !u!1 &2003452620
 GameObject:
   m_ObjectHideFlags: 0

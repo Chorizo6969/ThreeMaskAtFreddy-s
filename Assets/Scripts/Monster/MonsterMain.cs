@@ -10,6 +10,8 @@ public class MonsterMain : MonoBehaviour
     public MonsterMovement MonsterMovement;
     public MonsterVisual MonsterVisual;
 
+    public GameObject Player;
+
     public int defaultPos = 3;
     public MaskState defaultMaskState;
 
