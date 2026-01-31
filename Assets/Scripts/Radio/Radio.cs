@@ -15,7 +15,7 @@ public class Radio : MonoBehaviour
         if (Current >=_goal)
         {
             Current = _goal;
-            //Victoire
+            Debug.Log("Victoire");
         }
     }
 }

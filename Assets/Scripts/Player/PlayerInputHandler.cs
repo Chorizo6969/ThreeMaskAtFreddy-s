@@ -11,8 +11,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         int maskIndex = GetMaskIndexFromInput(context);
         if (maskIndex == -1) return;
-
-        playerMask.EquipMask(maskIndex);
+        if (playerMask.currentMask == maskIndex) playerMask.RemoveMask();
+        else playerMask.EquipMask(maskIndex);
     }
 
     private int GetMaskIndexFromInput(InputAction.CallbackContext context)

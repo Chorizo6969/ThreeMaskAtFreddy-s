@@ -1,6 +1,7 @@
 public enum MaskType
 {
-    Red,
-    Green,
-    Blue
+    Red = 0,
+    Green = 1,
+    Blue = 2,
+    Undefined = -1
 }
