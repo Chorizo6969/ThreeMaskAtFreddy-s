@@ -8,7 +8,7 @@ public class MonsterVisual : MonoBehaviour
     [Header("Meshes Lists")]
     [SerializeField] private List<MaskPair> maskPairs;
     [SerializeField] private List<PosMeshPair> posMeshPairs;
-
+        
     private Dictionary<MaskType, GameObject> instantiatedMasks;
     private Dictionary<int, GameObject> meshReferences;
 

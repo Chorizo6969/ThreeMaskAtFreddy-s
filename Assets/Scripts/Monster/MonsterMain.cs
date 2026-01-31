@@ -33,6 +33,7 @@ public class MonsterMain : MonoBehaviour
         //Init ref for visual
         MonsterVisual.InitMeshReferences();
         MonsterVisual.InstantiateMasks();
+        MonsterMovement.InitPosReferences();
 
         //StartRaw
         MonsterMovement.MonsterGoToThisRow(DefaultRow);

@@ -1,53 +1,66 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static MonsterVisual;
 
 public class MonsterMovement : MonoBehaviour
 {
     [System.Serializable]
-    public class Row
+    public class RowPair
     {
-        public List<GameObject> positionsList;
+        public int RowNumber;
+        public List<GameObject> PositionsList;
     }
 
-    public int currentRow;
+    public int CurrentRow;
 
-    [SerializeField] private List<Row> rows;
-    [SerializeField] private int _currentRowListIndex; 
+    [Header("Pos Lists")]
+    [SerializeField] private List<RowPair> rowPair;
     [SerializeField] private GameObject _currentPos;
 
-    public void MonsterGoToThisRow(int _row)
+    private Dictionary<int, List<GameObject>> posDict;
+
+    public void InitPosReferences()
     {
-        int _meshNumber = _row;
-        currentRow = _row;
-        _currentRowListIndex = _row - 1;
-        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
-        transform.position = GetRandomPosFromRow(rows[_row-1].positionsList);
-        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
+        posDict = new Dictionary<int, List<GameObject>>();
+
+        foreach (var pair in rowPair)
+        {
+            posDict[pair.RowNumber] = pair.PositionsList;
+        }
+    }
+
+    public void MonsterGoToThisRow(int newRow)
+    {
+        CurrentRow = newRow;
+        if (posDict.TryGetValue(newRow, out var newPos))
+        {
+            MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(CurrentRow);
+            transform.position = GetRandomPosFromRow(CurrentRow);
+            MonsterMain.Instance.MonsterVisual.RotateToPlayer();
+        }
     }
 
     public void MonsterMoveTowardPlayer()
     {
         AdvanceRow();
-        int _meshNumber = _currentRowListIndex + 1; 
-        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
-        transform.position = GetRandomPosFromRow(rows[_currentRowListIndex].positionsList);
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(CurrentRow);
+        transform.position = GetRandomPosFromRow(CurrentRow);
         MonsterMain.Instance.MonsterVisual.RotateToPlayer();
     }
 
     private void AdvanceRow()
     {
-        if (_currentRowListIndex > 0)
+        if (CurrentRow > 1)
         {
-            _currentRowListIndex--;
+            CurrentRow--;
         }
-        currentRow = _currentRowListIndex + 1;
     }
 
-    private Vector3 GetRandomPosFromRow(List<GameObject> _posList)
+    private Vector3 GetRandomPosFromRow(int row)
     {
-        int _randomIndex = Random.Range(0, _posList.Count);
-        _currentPos = _posList[_randomIndex];
+        int _randomIndex = Random.Range(0, posDict[row].Count);
+        _currentPos = posDict[row][_randomIndex];
         return _currentPos.transform.position;
     }
 
