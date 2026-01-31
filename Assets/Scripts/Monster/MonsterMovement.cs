@@ -57,12 +57,9 @@ public class MonsterMovement : MonoBehaviour
     public void MonsterGoToThisRow(int newRow)
     {
         CurrentRow = newRow;
-        if (posDict.TryGetValue(newRow, out var newPos))
-        {
-            MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(CurrentRow);
-            transform.position = GetRandomPosFromRow(CurrentRow);
-            MonsterMain.Instance.MonsterVisual.RotateToPlayer();
-        }
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(CurrentRow);
+        transform.position = GetRandomPosFromRow(CurrentRow);
+        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
     }
 
     public void MonsterMoveTowardPlayer()

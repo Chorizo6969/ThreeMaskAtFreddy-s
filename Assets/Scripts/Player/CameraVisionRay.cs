@@ -10,7 +10,7 @@ public class CameraVisionRay : MonoBehaviour
             RaycastHit hitDirection;
             if (Physics.Raycast(transform.position, transform.forward, out hitDirection, Mathf.Infinity, 1<<7))
             {
-                Debug.Log("JE TOUCHE le trigger");
+                //Debug.Log("JE TOUCHE le trigger");
                 if (hitDirection.transform.gameObject.TryGetComponent<DirectionLookDetector>(out DirectionLookDetector component))
                 {
                     component.IsWatchedByPlayer = true;
@@ -21,7 +21,7 @@ public class CameraVisionRay : MonoBehaviour
             RaycastHit hitMonster;
             if (Physics.Raycast(transform.position, transform.forward, out hitMonster, Mathf.Infinity, 1<<6))
             {
-                Debug.Log("JE TOUCHE le monstre");
+                //Debug.Log("JE TOUCHE le monstre");
                 MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer = true;
             }
             else
