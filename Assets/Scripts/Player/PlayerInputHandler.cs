@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnEquipMask(InputAction.CallbackContext context)
     {
+        if (!SessionHandler.Instance.GameStarted) return;
         if (!context.performed) return;
         if (_playerMovement.Position != 1) return;
 

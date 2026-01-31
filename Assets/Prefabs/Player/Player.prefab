@@ -2655,6 +2655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractRadio
   _radio: {fileID: 9017666753817065298}
   _playerMovement: {fileID: 3380917965659706334}
+  _playerMask: {fileID: 3957540984957754453}
+  _maskHandler: {fileID: 8825981923861780454}
 --- !u!95 &3759923348888640727
 Animator:
   serializedVersion: 7
