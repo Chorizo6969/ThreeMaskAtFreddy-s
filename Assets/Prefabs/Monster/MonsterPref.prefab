@@ -503,6 +503,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   DefaultRow: 3
   DefaultMaskState: {fileID: 5412035401969533984}
+  IsWatchedByPlayer: 0
 --- !u!114 &7124279577804892754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,21 +516,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6027488a5bda44483f4b3244ab725d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
-  currentRow: 0
-  rows:
-  - positionsList:
+  CurrentRow: 0
+  rowPair:
+  - RowNumber: 1
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - positionsList:
+  - RowNumber: 2
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - positionsList:
+  - RowNumber: 3
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  _currentRowListIndex: 0
   _currentPos: {fileID: 0}
 --- !u!114 &4046012502805756312
 MonoBehaviour:
