@@ -555,6 +555,7 @@ MonoBehaviour:
   - {fileID: 1717160328}
   - {fileID: 295632711}
   - {fileID: 130340334}
+  CurrentMask: 0
 --- !u!114 &1531176228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +571,7 @@ MonoBehaviour:
   _pos3List: []
   _pos2List: []
   _pos1List: []
-  _currentPos: {fileID: 0}
+  _currentPos: 0
 --- !u!114 &1531176229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +588,8 @@ MonoBehaviour:
   MonsterTime: {fileID: 1531176227}
   MonsterMovement: {fileID: 1531176228}
   MonsterVisual: {fileID: 1531176225}
-  CurrentMask: 0
+  defaultPos: 3
+  defaultMaskState: {fileID: 1717160328}
 --- !u!1 &1717160326
 GameObject:
   m_ObjectHideFlags: 0

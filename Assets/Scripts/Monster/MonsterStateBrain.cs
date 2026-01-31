@@ -10,6 +10,7 @@ public class MonsterStateBrain : MonoBehaviour
     public void SwitchToThisMaskState(MaskState _newMask)
     {
         currentStateMask = _newMask;
+        currentStateMask.OnEnter();
     }
 
     public void SwitchToNewMaskState(MaskState _newMask)
