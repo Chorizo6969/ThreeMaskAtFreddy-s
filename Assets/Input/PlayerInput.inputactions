@@ -93,7 +93,7 @@
                 {
                     "name": "",
                     "id": "2bc97c8f-c1ec-4f46-add1-c72ebd089add",
-                    "path": "<Keyboard>/numpad1",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -104,7 +104,7 @@
                 {
                     "name": "",
                     "id": "4fa8e3e7-ca8a-4bd9-8caf-47f36dd2db44",
-                    "path": "<Keyboard>/numpad2",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -115,7 +115,7 @@
                 {
                     "name": "",
                     "id": "c39fff6a-9a37-4585-906e-b7cb5d28412d",
-                    "path": "<Keyboard>/numpad3",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -10,7 +10,7 @@ public class PlayerMask : MonoBehaviour
 
     public MaskType CurrentMask = MaskType.Undefined;
 
-    [SerializeField] private List<MaskHandler> _maskHandlers = new();
+    public List<MaskHandler> _maskHandlers = new();
 
     private void Start()
     {

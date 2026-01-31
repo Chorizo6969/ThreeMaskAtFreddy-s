@@ -5,6 +5,8 @@ public class InteractRadio : MonoBehaviour
 {
     [SerializeField] private Radio _radio;
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerMask _playerMask;
+    [SerializeField] private MaskHandler _maskHandler;
 
     private bool _repair = false;
 
@@ -12,9 +14,17 @@ public class InteractRadio : MonoBehaviour
     {
         if (context.started && _playerMovement.Position == 1)
         {
+            if (_playerMask.currentMask != -1)
+            {
+                _playerMask.RemoveMask();
+                //_maskHandler = _playerMask._maskHandlers[_playerMask.currentMask];
+                //_maskHandler.OnDesequip();
+            }
+
             _repair = true;
             _playerMovement.CanMove = false;
             _playerMovement.SetCamera(_playerMovement.CamRadio);
+            _playerMovement.Position = 5;
         }
 
         if (context.canceled)
@@ -22,6 +32,7 @@ public class InteractRadio : MonoBehaviour
             _repair = false;
             _playerMovement.CanMove = true;
             _playerMovement.SetCamera(_playerMovement.CamAvant);
+            _playerMovement.Position = 1;
         }
     }
 

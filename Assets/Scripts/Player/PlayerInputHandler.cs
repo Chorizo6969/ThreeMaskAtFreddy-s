@@ -21,9 +21,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         InputControl control = context.control;
 
-        if (control == Keyboard.current.numpad1Key) return 0;
-        if (control == Keyboard.current.numpad2Key) return 1;
-        if (control == Keyboard.current.numpad3Key) return 2;
+        if (control == Keyboard.current.digit1Key) return 0;
+        if (control == Keyboard.current.digit2Key) return 1;
+        if (control == Keyboard.current.digit3Key) return 2;
 
         return -1;
     }
