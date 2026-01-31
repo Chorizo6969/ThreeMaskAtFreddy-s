@@ -80,10 +80,21 @@ public class MonsterMovement : MonoBehaviour
 
     private Vector3 GetRandomPosFromRow(int row)
     {
-        //list temporaire
-        int _randomIndex = Random.Range(0, posDict[row].Count);
-        _currentPos = posDict[row][_randomIndex];
-        return _currentPos.transform.position;
-    }
+        int _randomIndex = Random.Range(0, _valideDirection.Count);
+        DirectionType _randomDirectionType = _valideDirection[_randomIndex];
 
+        switch (_randomDirectionType)
+            {
+            case DirectionType.Right:
+                _currentPos = posDict[row][0];
+                break;
+            case DirectionType.Left:
+                _currentPos = posDict[row][1];
+                break;
+            case DirectionType.Back:
+                _currentPos = posDict[row][2];
+                break;
+            }
+            return _currentPos.transform.position;
+    } 
 }

@@ -1210,6 +1210,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1451053814}
+    - target: {fileID: 5682339796277009989, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
+      propertyPath: PlayerCam
+      value: 
+      objectReference: {fileID: 1451053814}
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[0].PositionsList.Array.data[0]'
       value: 
