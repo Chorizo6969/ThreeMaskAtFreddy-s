@@ -6,14 +6,20 @@ public class MonsterStateBrain : MonoBehaviour
     [SerializeField] MaskState currentStateMask;
     [SerializeField] List<MaskState> MaskStateList;
 
-    public void SwitchMask()
+    public MaskType CurrentMask;
+    public void SwitchToThisMaskState(MaskState _newMask)
+    {
+        currentStateMask = _newMask;
+    }
+
+    public void SwitchToNewMaskState(MaskState _newMask)
     {
         currentStateMask.OnExit();
-        currentStateMask = GetRandomMask();
+        currentStateMask = _newMask;
         currentStateMask.OnEnter();
     }
 
-    private MaskState GetRandomMask()
+    public MaskState GetRandomMaskState()
     {
         int randomIndex = Random.Range(0, MaskStateList.Count);
         return MaskStateList[randomIndex];

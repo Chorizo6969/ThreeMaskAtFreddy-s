@@ -8,11 +8,16 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField] private List<GameObject> _pos2List;
     [SerializeField] private List<GameObject> _pos1List;
 
-    [SerializeField] private GameObject _currentPos;
+    public int _currentPos;
+
+    public void MonsterMoveTo(int pos)
+    {
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(pos);
+    }
 
     public void MonsterMoveTowardPlayer()
     {
-        transform.position = GetNextRandomPos(GetNextPosList());
+        transform.position = GetRandomPosFromList(GetNextPosList());
     }
 
     public void MonsterFlee()
@@ -25,7 +30,7 @@ public class MonsterMovement : MonoBehaviour
         return _pos3List; //ici a finir
     }
 
-    private Vector3 GetNextRandomPos(List<GameObject> posList)
+    private Vector3 GetRandomPosFromList(List<GameObject> posList)
     {
         int randomIndex = Random.Range(0, posList.Count);
         return posList[randomIndex].transform.position;
