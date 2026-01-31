@@ -42,6 +42,14 @@ public class MonsterTimer : MonoBehaviour
 
     private void DoAction()
     {
-        MonsterMain.Instance.MonsterBrain.SwitchMask();
+        if(MonsterMain.Instance.MonsterMovement.currentRow != 1)
+        {
+            MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
+            MonsterMain.Instance.MonsterMovement.MonsterMoveTowardPlayer();
+        }
+        else
+        {
+            MonsterMain.Instance.MonsterEncounter.CheckPlayerMask();
+        }
     }
 }

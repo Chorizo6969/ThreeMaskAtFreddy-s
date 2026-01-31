@@ -4,39 +4,51 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _pos3List;
-    [SerializeField] private List<GameObject> _pos2List;
-    [SerializeField] private List<GameObject> _pos1List;
+    [System.Serializable]
+    public class Row
+    {
+        public List<GameObject> positionsList;
+    }
 
+    public int currentRow;
+
+    [SerializeField] private List<Row> rows;
+    [SerializeField] private int _currentRowListIndex; 
     [SerializeField] private GameObject _currentPos;
+
+    public void MonsterGoToThisRow(int _row)
+    {
+        int _meshNumber = _row;
+        currentRow = _row;
+        _currentRowListIndex = _row - 1;
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
+        transform.position = GetRandomPosFromRow(rows[_row-1].positionsList);
+        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
+    }
 
     public void MonsterMoveTowardPlayer()
     {
-        transform.position = GetNextRandomPos(GetNextPosList());
+        AdvanceRow();
+        int _meshNumber = _currentRowListIndex + 1; 
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
+        transform.position = GetRandomPosFromRow(rows[_currentRowListIndex].positionsList);
+        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
     }
 
-    public void MonsterFlee()
+    private void AdvanceRow()
     {
-        transform.position = GetRandom3Pos();
+        if (_currentRowListIndex > 0)
+        {
+            _currentRowListIndex--;
+        }
+        currentRow = _currentRowListIndex + 1;
     }
 
-    private List<GameObject> GetNextPosList()
+    private Vector3 GetRandomPosFromRow(List<GameObject> _posList)
     {
-        return _pos3List; //ici a finir
+        int _randomIndex = Random.Range(0, _posList.Count);
+        _currentPos = _posList[_randomIndex];
+        return _currentPos.transform.position;
     }
-
-    private Vector3 GetNextRandomPos(List<GameObject> posList)
-    {
-        int randomIndex = Random.Range(0, posList.Count);
-        return posList[randomIndex].transform.position;
-    }
-
-    private Vector3 GetRandom3Pos() {
-        int randomIndex = Random.Range(0, _pos3List.Count);
-        return _pos3List[randomIndex].transform.position;
-
-    }
-
-    
 
 }

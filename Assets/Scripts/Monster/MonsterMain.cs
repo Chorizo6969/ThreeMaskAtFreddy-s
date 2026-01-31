@@ -9,8 +9,12 @@ public class MonsterMain : MonoBehaviour
     public MonsterStateBrain MonsterTime;
     public MonsterMovement MonsterMovement;
     public MonsterVisual MonsterVisual;
+    public MonsterEncounter MonsterEncounter;
 
-    public MaskType CurrentMask;
+    public GameObject Player;
+
+    public int DefaultRow = 3;
+    public MaskState DefaultMaskState;
 
     private void Awake()
     {
@@ -24,5 +28,15 @@ public class MonsterMain : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+
+        //Init ref for visual
+        MonsterVisual.InitMeshReferences();
+        MonsterVisual.InstantiateMasks();
+
+        //StartRaw
+        MonsterMovement.MonsterGoToThisRow(DefaultRow);
+        //StartMask
+        MonsterBrain.SwitchToThisMaskState(DefaultMaskState);
+
     }
 }

@@ -1,58 +1,99 @@
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using static UnityEngine.Audio.GeneratorInstance;
 
 public class MonsterVisual : MonoBehaviour
 {
-    [Header("Current Meshes")]
-    [SerializeField] private GameObject _currentMaskEquipped;
-    [SerializeField] private GameObject _currentMonsterPose;
-
     [Header("Meshes Lists")]
     [SerializeField] private List<MaskPair> maskPairs;
     [SerializeField] private List<PosMeshPair> posMeshPairs;
 
-    private Dictionary<MaskType, GameObject> MaskDict;
-    private Dictionary<int, GameObject> MeshDict;
+    private Dictionary<MaskType, GameObject> instantiatedMasks;
+    private Dictionary<int, GameObject> meshReferences;
 
-    private void Awake()
+    private GameObject _currentMask;
+    private GameObject _currentMesh;
+
+    public void InitMeshReferences()
     {
-        InitDictionaries();
+        meshReferences = new Dictionary<int, GameObject>();
+
+        foreach (var pair in posMeshPairs)
+        {
+            meshReferences[pair.pos] = pair.PosMesh;
+            pair.PosMesh.SetActive(false);
+        }
     }
 
-    void InitDictionaries()
+    public void InstantiateMasks()
     {
-        MaskDict = new Dictionary<MaskType, GameObject>();
-        foreach (var pair in maskPairs)
-            MaskDict[pair.maskType] = pair.maskMesh;
+        instantiatedMasks = new Dictionary<MaskType, GameObject>();
 
-        MeshDict = new Dictionary<int, GameObject>();
-        foreach (var pair in posMeshPairs)
-            MeshDict[pair.pos] = pair.PosMesh;
+        foreach (var pair in maskPairs)
+        {
+            GameObject maskInstance = Instantiate(pair.maskMesh);
+            maskInstance.SetActive(false);
+            instantiatedMasks[pair.maskType] = maskInstance;
+        }
     }
 
     public void ChangeMaskMesh(MaskType newMaskType)
     {
-        if (MaskDict.TryGetValue(newMaskType, out var mesh))
-            _currentMaskEquipped = mesh;
+        if (instantiatedMasks.TryGetValue(newMaskType, out var newMask))
+        {
+            if (_currentMask != null)
+                _currentMask.SetActive(false);
+
+            if (_currentMesh != null)
+            {
+                Transform maskSocket = _currentMesh.transform.Find("MaskSocket");
+
+                _currentMask = newMask;
+                _currentMask.transform.SetParent(maskSocket);
+                _currentMask.transform.localPosition = Vector3.zero;
+                _currentMask.transform.localRotation = Quaternion.identity;
+                _currentMask.SetActive(true);
+            }
+        }
     }
 
     public void ChangeMonsterMesh(int newMonsterPos)
     {
-        if (MeshDict.TryGetValue(newMonsterPos, out var mesh))
-            _currentMonsterPose = mesh;
+        if (meshReferences.TryGetValue(newMonsterPos, out var newMesh))
+        {
+            if (_currentMesh != null)
+                _currentMesh.SetActive(false);
+
+            _currentMesh = newMesh;
+            _currentMesh.SetActive(true);
+
+            if (_currentMask != null)
+            {
+                Transform maskSocket = _currentMesh.transform.Find("MaskSocket");
+                _currentMask.transform.SetParent(maskSocket);
+                _currentMask.transform.localPosition = Vector3.zero;
+                _currentMask.transform.localRotation = Quaternion.identity;
+            }
+        }
+    }
+
+    public void RotateToPlayer()
+    {
+        transform.LookAt(MonsterMain.Instance.Player.transform.position);
     }
 
     [System.Serializable]
     public class MaskPair
     {
         public MaskType maskType;
-        public GameObject maskMesh;
+        public GameObject maskMesh; 
     }
 
     [System.Serializable]
     public class PosMeshPair
     {
         public int pos;
-        public GameObject PosMesh;
+        public GameObject PosMesh; 
     }
 }
