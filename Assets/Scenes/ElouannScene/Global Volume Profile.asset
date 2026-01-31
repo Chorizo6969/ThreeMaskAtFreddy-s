@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: 75
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.76792455, b: 0.76792455, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 0
@@ -113,10 +113,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5019608, g: 0.25, b: 0.2509804, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.71432775, b: 0.51886785, a: 1}
+    m_Value: {r: 0.94716984, g: 0, b: 0.0145719, a: 1}
   balance:
     m_OverrideState: 1
     m_Value: 5.1

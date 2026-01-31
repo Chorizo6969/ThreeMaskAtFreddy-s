@@ -1,4 +1,7 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using DG.Tweening.Core;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -51,7 +54,7 @@ public class PostProcessHandler : MonoBehaviour
     [ContextMenu("Truc")]
     public void Truc()
     {
-        Loop();
+        StartCoroutine(VignetteLoop());
     }
 
     #region Vignette
@@ -85,12 +88,14 @@ public class PostProcessHandler : MonoBehaviour
         }
     }
 
-    private async void Loop()
+    private IEnumerator VignetteLoop()
     {
         while (true)
         {
-            await ChangeVignette(0.25f, 0.5f);
-            await ChangeVignette(0.2f, 0.5f);
+            VignettePulse(0.22f, 0.9f);
+            yield return new WaitForSeconds(0.9f);
+            VignettePulse(0.2f, 0.55f);
+            yield return new WaitForSeconds(0.55f);
         }
     }
 
@@ -99,4 +104,22 @@ public class PostProcessHandler : MonoBehaviour
         await ChangeVignette(_baseVignetteIntensity, duration);
     }
     #endregion
+
+    public void VignettePulse(float newIntensity, float duration)
+    {
+        Volume.profile.TryGet(out Vignette vignette);
+
+        Sequence sequence = DOTween.Sequence().Pause();
+
+        DOGetter<float> getter1 = () => vignette.intensity.value;
+        DOSetter<float> setter1 = x => vignette.intensity.Override(x);
+
+        sequence
+            .Append(DOTween.To(getter1, setter1, newIntensity, duration).SetEase(Ease.Linear));
+
+        sequence.Play();
+
+
+    }
 }
+
