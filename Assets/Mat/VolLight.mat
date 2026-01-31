@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _CutoffPower: 1
-    - _EdgeFallof: 0.14
+    - _EdgeFallof: 0.1
     - _FirstNoiseImportance: 0
     - _FirstNoisePower: 120
     - _Opacity: 0.8

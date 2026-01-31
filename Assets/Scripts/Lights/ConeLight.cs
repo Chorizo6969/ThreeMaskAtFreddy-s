@@ -13,8 +13,8 @@ public class ConeLight : MonoBehaviour
     {
         _mesh.transform.localScale = new Vector3(_radius, _range, _radius);
 
-        //_light.innerSpotAngle = (_radius - 1.5f) * 10;
-        //_light.spotAngle = (_radius + 1.5f) * 10;
-        //_light.range = (_range + 5) * 2f;
+        _light.innerSpotAngle = (_radius - 1.5f) * 4;
+        _light.spotAngle = (_radius + 1.5f) * 6;
+        _light.range = (_range + 2) * 2f;
     }
 }
