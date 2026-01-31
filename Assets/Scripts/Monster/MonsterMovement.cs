@@ -4,47 +4,45 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-
     [System.Serializable]
     public class Row
     {
-        public List<GameObject>positionsList;
+        public List<GameObject> positionsList;
     }
 
     [SerializeField] private List<Row> rows;
-
-    [SerializeField] private int _currentRow;
+    [SerializeField] private int _currentRowListIndex; 
     [SerializeField] private GameObject _currentPos;
 
-
-    public void MonsterMoveTo(int pos)
+    public void MonsterGoToThisRow(int _row)
     {
-        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(pos);
+        int _meshNumber = _row;
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
+        transform.position = GetRandomPosFromRow(rows[_row-1].positionsList);
     }
 
-    //public void MonsterFlee()
-    //{
-    //    transform.position = GetRandom3Pos();
-    //}
-
-    //private List<GameObject> GetNextPosList()
-    //{
-    //    return _pos3List; //ici a finir
-    //}
-
-    private Vector3 GetRandomPosFromList(List<GameObject> posList)
+    public void MonsterMoveToPlayer()
     {
-        int randomIndex = Random.Range(0, posList.Count);
-        return posList[randomIndex].transform.position;
+        Debug.Log("MonsterMove");
+        AdvanceRow();
+        int _meshNumber = _currentRowListIndex + 1; 
+        MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
+        transform.position = GetRandomPosFromRow(rows[_currentRowListIndex].positionsList);
     }
 
-    //private Vector3 GetRandom3Pos()
-    //{
-    //    int randomIndex = Random.Range(0, _pos3List.Count);
-    //    return _pos3List[randomIndex].transform.position;
+    private void AdvanceRow()
+    {
+        if (_currentRowListIndex > 0)
+        {
+            _currentRowListIndex--;
+        }
+    }
 
-    //}
-
-
+    private Vector3 GetRandomPosFromRow(List<GameObject> _posList)
+    {
+        int _randomIndex = Random.Range(0, _posList.Count);
+        _currentPos = _posList[_randomIndex];
+        return _currentPos.transform.position;
+    }
 
 }

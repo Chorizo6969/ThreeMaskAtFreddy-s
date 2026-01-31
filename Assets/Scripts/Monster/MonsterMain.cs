@@ -12,8 +12,8 @@ public class MonsterMain : MonoBehaviour
 
     public GameObject Player;
 
-    public int defaultPos = 3;
-    public MaskState defaultMaskState;
+    public int DefaultRaw = 3;
+    public MaskState DefaultMaskState;
 
     private void Awake()
     {
@@ -32,10 +32,10 @@ public class MonsterMain : MonoBehaviour
         MonsterVisual.InitMeshReferences();
         MonsterVisual.InstantiateMasks();
 
-        //StartPos
-        MonsterMovement.MonsterMoveTo(defaultPos);
+        //StartRaw
+        MonsterMovement.MonsterGoToThisRow(DefaultRaw);
         //StartMask
-        MonsterBrain.SwitchToThisMaskState(defaultMaskState);
+        MonsterBrain.SwitchToThisMaskState(DefaultMaskState);
 
     }
 }
