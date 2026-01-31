@@ -503,77 +503,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 580247232217304270, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529930759803653627, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529930759803653627, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562328512284108127, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562328512284108127, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167290536790506866, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576922600039806233, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3213094493109006593, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3213094493109006593, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419221249916445726, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6637395867376758804, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6637395867376758804, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6757927697747873969, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6757927697747873969, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 3777209241353696527, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
+    - target: {fileID: 7338294651116742248, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
+    - target: {fileID: 7608886344775838517, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5952c5713b03d824b97290e9d5584e96, type: 2}
     - target: {fileID: 7966361263507196214, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
       propertyPath: m_Name
       value: PosForMonster
-      objectReference: {fileID: 0}
-    - target: {fileID: 8017533590233418955, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8017533590233418955, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8554816159209256599, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,7 +11,7 @@ public class MonsterMain : MonoBehaviour
     public MonsterVisual MonsterVisual;
     public MonsterEncounter MonsterEncounter;
 
-    public GameObject Player;
+    public GameObject PlayerCam;
     public int DefaultRow = 3;
     public MaskState DefaultMaskState;
 
