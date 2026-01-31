@@ -15,18 +15,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (!CanMove) return;
+        if (context.started && CanMove)
+        {
+            moveInput = context.ReadValue<Vector2>();
+            UpdateCamera();
+            CanMove = false;
+        }
 
-        moveInput = context.ReadValue<Vector2>();
-        UpdateCamera();
+        if (context.canceled)
+        {
+            moveInput = context.ReadValue<Vector2>();
+            UpdateCamera();
+            CanMove = true;
+        }
     }
 
     private void UpdateCamera()
     {
         if (moveInput == Vector2.zero)
-            return;
-
-        if (moveInput.y > 0)
         {
             SetCamera(CamAvant);
             Position = 1;
