@@ -12,9 +12,10 @@ public class MonsterMain : MonoBehaviour
     public MonsterEncounter MonsterEncounter;
 
     public GameObject Player;
-
     public int DefaultRow = 3;
     public MaskState DefaultMaskState;
+
+    public bool IsWatchedByPlayer;
 
     private void Awake()
     {
