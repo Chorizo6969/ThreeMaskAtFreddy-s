@@ -838,6 +838,7 @@ GameObject:
   - component: {fileID: 1230966094}
   - component: {fileID: 1230966093}
   - component: {fileID: 1230966092}
+  - component: {fileID: 1230966095}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -912,13 +913,57 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230966091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451053818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230966095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230966091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1358311692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1088,8 @@ GameObject:
   - component: {fileID: 1451053818}
   - component: {fileID: 1451053817}
   - component: {fileID: 1451053816}
+  - component: {fileID: 1451053821}
+  - component: {fileID: 1451053820}
   - component: {fileID: 1451053819}
   m_Layer: 0
   m_Name: Player
@@ -1120,7 +1167,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1230966094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1451053819
@@ -1135,6 +1183,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a323b9a090cda42b8b3931c4471cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraVisionRay
+--- !u!114 &1451053820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451053814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06993373ece21fb42b2ce380f71f765d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMask
+  playerAnim: {fileID: 0}
+  currentMask: -1
+  CurrentMask: -1
+  _maskHandlers: []
+--- !u!114 &1451053821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451053814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5769ef26a4f194a4c9b28165b05c69d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMain
+  PlayerMovement: {fileID: 0}
+  PlayerMask: {fileID: 1451053820}
+  PlayerLook: {fileID: 0}
+  CameraVisionRay: {fileID: 1451053819}
+  PlayerAnim: {fileID: 0}
+  PlayerInput: {fileID: 0}
+  PlayerCam: {fileID: 1230966093}
 --- !u!1001 &1536489190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1187,6 +1270,10 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1451053814}
+    - target: {fileID: 5682339796277009989, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
+      propertyPath: DefaultDelayBetweenActions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[0].PositionsList.Array.data[0]'
       value: 
@@ -1214,7 +1301,7 @@ PrefabInstance:
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[2].PositionsList.Array.data[0]'
       value: 
-      objectReference: {fileID: 343370295}
+      objectReference: {fileID: 343370293}
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[2].PositionsList.Array.data[1]'
       value: 
@@ -1222,7 +1309,7 @@ PrefabInstance:
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[2].PositionsList.Array.data[2]'
       value: 
-      objectReference: {fileID: 343370293}
+      objectReference: {fileID: 343370295}
     - target: {fileID: 8768331341919752519, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: m_Name
       value: Monster
@@ -1410,7 +1497,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1230966094}
   - {fileID: 1007201093}
   - {fileID: 2046076104}
   - {fileID: 1451053818}
