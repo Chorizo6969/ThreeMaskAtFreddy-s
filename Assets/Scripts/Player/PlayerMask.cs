@@ -1,25 +1,26 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMask : MonoBehaviour
 {
-    private bool _isWearingMask;
+    [SerializeField] private PlayerAnim playerAnim;
 
-    private void Update()
+    private int currentMask = -1; // -1 = aucun masque
+
+    public void EquipMask(int maskIndex)
     {
-        if(Input.GetKeyDown(KeyCode.Keypad1) && !_isWearingMask)
-        {
-            print("1");
-            _isWearingMask = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2) && !_isWearingMask)
-        {
-            print("2");
-            _isWearingMask = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad3) && !_isWearingMask)
-        {
-            print("3");
-            _isWearingMask = false;
-        }
+        if (currentMask != -1)
+            RemoveMask();
+
+        currentMask = maskIndex;
+        playerAnim.PlayEquipMask(maskIndex);
+    }
+
+    public void RemoveMask()
+    {
+        if (currentMask == -1) return;
+
+        playerAnim.PlayRemoveMask(currentMask);
+        currentMask = -1;
     }
 }

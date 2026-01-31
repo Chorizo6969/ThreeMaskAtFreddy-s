@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    public Animator _animator;
-    private float _currentSpeed;
+    [SerializeField] private Animator animator;
 
-    public float GetCurrentSpeed() => _currentSpeed;
-
-    public void SetTakesMask(float index, int speed)
+    public void PlayEquipMask(int maskIndex)
     {
-        _currentSpeed = index;
-        _animator.SetFloat("MaskTakesIndex", index);
+        animator.speed = 1f;
+        animator.SetFloat("MaskIndex", maskIndex);
+        animator.SetBool("IsWearing", true);
+        animator.Play("TakesMask", 0, 0f);
     }
 
-    public void SetWearMask(float index, int speed)
+    public void PlayRemoveMask(int maskIndex)
     {
-        _currentSpeed = index;
-        _animator.SetFloat("MaskWearIndex", index);
+        animator.SetFloat("MaskIndex", maskIndex);
+        animator.SetBool("IsWearing", false);
+        animator.Play("TakesMask", 0, 1f);
+        animator.Update(0f);
+        animator.speed = -1f;
     }
 }

@@ -1,0 +1,28 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerInputHandler : MonoBehaviour
+{
+    [SerializeField] private PlayerMask playerMask;
+
+    public void OnEquipMask(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        int maskIndex = GetMaskIndexFromInput(context);
+        if (maskIndex == -1) return;
+
+        playerMask.EquipMask(maskIndex);
+    }
+
+    private int GetMaskIndexFromInput(InputAction.CallbackContext context)
+    {
+        InputControl control = context.control;
+
+        if (control == Keyboard.current.numpad1Key) return 0;
+        if (control == Keyboard.current.numpad2Key) return 1;
+        if (control == Keyboard.current.numpad3Key) return 2;
+
+        return -1;
+    }
+}
