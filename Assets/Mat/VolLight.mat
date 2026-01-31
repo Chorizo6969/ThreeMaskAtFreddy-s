@@ -48,7 +48,7 @@ Material:
     - _SecondNoiseImportance: 0
     - _SecondNoisePower: 40
     m_Colors:
-    - _Color: {r: 1.4980394, g: 1.317647, b: 0.87058824, a: 1}
+    - _Color: {r: 2.1185474, g: 1.8634341, b: 1.2311976, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4889928973864861862

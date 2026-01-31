@@ -1,10 +1,20 @@
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ConeLight : MonoBehaviour
 {
-    private void OnEnable()
+    [SerializeField] private float _radius;
+    [SerializeField] private float _range;
+
+    [SerializeField] private GameObject _mesh;
+    [SerializeField] private Light _light;
+
+    private void Update()
     {
-        Debug.Log("Yo!");
-        //this.transform.GetChild(0).gameObject.SetActive(false);
+        _mesh.transform.localScale = new Vector3(_radius, _range, _radius);
+
+        //_light.innerSpotAngle = (_radius - 1.5f) * 10;
+        //_light.spotAngle = (_radius + 1.5f) * 10;
+        //_light.range = (_range + 5) * 2f;
     }
 }
