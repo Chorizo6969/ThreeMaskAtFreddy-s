@@ -38,6 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Float: 20
+    - _Posterize: 20
     - _Posterize_1: 20
     - _Posterize_2: 1
     m_Colors:
