@@ -42,7 +42,5 @@ public class MonsterMain : MonoBehaviour
 
         //StartTimer
         MonsterTimer.CurrentDelayBetweenActions = DefaultDelayBetweenActions;
-        MonsterTimer.StartTimer();
-
     }
 }

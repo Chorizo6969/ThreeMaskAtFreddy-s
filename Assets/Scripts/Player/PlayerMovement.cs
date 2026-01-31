@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!SessionHandler.Instance.GameStarted) return;
         if (context.started && CanMove)
         {
             moveInput = context.ReadValue<Vector2>();

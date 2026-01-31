@@ -12,6 +12,9 @@ public class InteractRadio : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+
+        if (!SessionHandler.Instance.GameStarted) return;
+
         if (context.started && _playerMovement.Position == 1)
         {
             if (_playerMask.currentMask != -1)
