@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5919033886030167908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MaskSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3442218203039147002}
   - component: {fileID: 7668920037847484580}
   - component: {fileID: 917795633155661786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MonsterPos01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8184140581309758089}
   - component: {fileID: 5874885515931168511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlueMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2836340408394256355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MaskSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8193291581012533677}
   - component: {fileID: 5412035401969533984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RedMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3807273338465599187}
   - component: {fileID: 66236730846611941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826361221654856066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ==States==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 5732760545872631634}
   - component: {fileID: 3754044849430640028}
   - component: {fileID: 2332743173384725648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MonsterPos02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2735919472141005961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MaskSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 9084432894410055605}
   - component: {fileID: 790916149630811731}
   - component: {fileID: 6647002084428209128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MonsterPref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,6 +503,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   DefaultRow: 3
   DefaultMaskState: {fileID: 5412035401969533984}
+  IsWatchedByPlayer: 0
 --- !u!114 &7124279577804892754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,21 +516,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6027488a5bda44483f4b3244ab725d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMovement
-  currentRow: 0
-  rows:
-  - positionsList:
+  CurrentRow: 0
+  rowPair:
+  - RowNumber: 1
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - positionsList:
+  - RowNumber: 2
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - positionsList:
+  - RowNumber: 3
+    PositionsList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  _currentRowListIndex: 0
   _currentPos: {fileID: 0}
 --- !u!114 &4046012502805756312
 MonoBehaviour:
@@ -632,7 +635,7 @@ GameObject:
   - component: {fileID: 4746802242881688680}
   - component: {fileID: 6472993894838124502}
   - component: {fileID: 2739059005659847131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MonsterPos03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
