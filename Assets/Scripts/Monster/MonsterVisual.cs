@@ -52,6 +52,7 @@ public class MonsterVisual : MonoBehaviour
                 _currentMask = newMask;
                 _currentMask.transform.SetParent(maskSocket);
                 _currentMask.transform.localPosition = Vector3.zero;
+                _currentMask.transform.localScale = Vector3.one;
                 _currentMask.transform.localRotation = Quaternion.identity;
                 _currentMask.SetActive(true);
             }

@@ -34,6 +34,7 @@ public class MonsterTimer : MonoBehaviour
     {
         if (MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer)
         {
+            EffectManager.Instance.BlinkAllLight(0.7f);
             if (MonsterMain.Instance.MonsterEncounter.CheckIsSamePlayerMask())
             {
                 MonsterMain.Instance.MonsterEncounter.Flee();

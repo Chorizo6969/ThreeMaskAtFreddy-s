@@ -36,4 +36,13 @@ public class EffectManager : MonoBehaviour
     }
     #endregion
 
+
+    public void BlinkAllLight(float blinkTime)
+    {
+        if(LightHandler._backLaneLight != null) LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
+        if (LightHandler._deskLight != null) LightHandler._deskLight.CallBlinkOnce(blinkTime);
+        if (LightHandler._rightLaneLight != null) LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
+        if (LightHandler._leftLaneLight != null) LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
+
+    }
 }
