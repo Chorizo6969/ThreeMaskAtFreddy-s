@@ -43,7 +43,7 @@ Material:
     - _FirstNoiseImportance: 0
     - _FirstNoisePower: 120
     - _Opacity: 0.8
-    - _QueueControl: 0
+    - _QueueControl: 1
     - _QueueOffset: 0
     - _SecondNoiseImportance: 0
     - _SecondNoisePower: 40
