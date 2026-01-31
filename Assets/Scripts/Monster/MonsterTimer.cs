@@ -43,6 +43,6 @@ public class MonsterTimer : MonoBehaviour
     private void DoAction()
     {
         MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
-        MonsterMain.Instance.MonsterMovement.MonsterMoveToPlayer();
+        MonsterMain.Instance.MonsterMovement.MonsterMoveTowardPlayer();
     }
 }

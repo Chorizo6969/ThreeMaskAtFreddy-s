@@ -55,7 +55,6 @@ public class MonsterVisual : MonoBehaviour
                 _currentMask.transform.localRotation = Quaternion.identity;
                 _currentMask.SetActive(true);
             }
-            RotateToPlayer();
         }
     }
 
@@ -76,11 +75,10 @@ public class MonsterVisual : MonoBehaviour
                 _currentMask.transform.localPosition = Vector3.zero;
                 _currentMask.transform.localRotation = Quaternion.identity;
             }
-            RotateToPlayer();
         }
     }
 
-    private void RotateToPlayer()
+    public void RotateToPlayer()
     {
         transform.LookAt(MonsterMain.Instance.Player.transform.position);
     }

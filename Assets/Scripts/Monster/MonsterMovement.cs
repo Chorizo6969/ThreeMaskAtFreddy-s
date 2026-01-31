@@ -17,17 +17,19 @@ public class MonsterMovement : MonoBehaviour
     public void MonsterGoToThisRow(int _row)
     {
         int _meshNumber = _row;
+        _currentRowListIndex = _row - 1;
         MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
         transform.position = GetRandomPosFromRow(rows[_row-1].positionsList);
+        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
     }
 
-    public void MonsterMoveToPlayer()
+    public void MonsterMoveTowardPlayer()
     {
-        Debug.Log("MonsterMove");
         AdvanceRow();
         int _meshNumber = _currentRowListIndex + 1; 
         MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(_meshNumber);
         transform.position = GetRandomPosFromRow(rows[_currentRowListIndex].positionsList);
+        MonsterMain.Instance.MonsterVisual.RotateToPlayer();
     }
 
     private void AdvanceRow()
