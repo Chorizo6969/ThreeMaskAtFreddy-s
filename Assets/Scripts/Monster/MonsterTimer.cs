@@ -1,12 +1,17 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class MonsterTimer : MonoBehaviour
 {
-    [SerializeField] private float delayBetweenActions = 5f;
+    public float DelayBetweenActions;
 
     private Coroutine _timerCoroutine;
 
+    private void Start()
+    {
+        DelayBetweenActions = MonsterMain.Instance.DefaultDelayBetweenActions;
+    }
     private void OnEnable()
     {
         StartTimer();
@@ -34,7 +39,7 @@ public class MonsterTimer : MonoBehaviour
 
     private IEnumerator TimerRoutine()
     {
-        yield return new WaitForSeconds(delayBetweenActions);
+        yield return new WaitForSeconds(DelayBetweenActions);
 
         DoAction();
         StartTimer();
@@ -42,14 +47,25 @@ public class MonsterTimer : MonoBehaviour
 
     private void DoAction()
     {
-        if(MonsterMain.Instance.MonsterMovement.CurrentRow != 1)
+        if (MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer)
         {
-            MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
-            MonsterMain.Instance.MonsterMovement.MonsterMoveTowardPlayer();
+            if (MonsterMain.Instance.MonsterEncounter.CheckIsSamePlayerMask())
+            {
+                MonsterMain.Instance.MonsterEncounter.Flee();
+            }
+            else
+            {
+                if (MonsterMain.Instance.MonsterMovement.CurrentRow != 1)
+                {
+                    MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
+                    MonsterMain.Instance.MonsterMovement.MonsterMoveTowardPlayer();
+                }
+                else
+                {
+                    MonsterMain.Instance.MonsterEncounter.KillPlayer();
+                }
+            }
         }
-        else
-        {
-            MonsterMain.Instance.MonsterEncounter.CheckPlayerMask();
-        }
+
     }
 }

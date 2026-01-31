@@ -30,11 +30,11 @@ public class CameraVisionRay : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hitMonster, 500, ~6))
         {
             Debug.Log("JE TOUCHE le monstre");
-            MonsterMain.Instance.IsWatchedByPlayer = true;
+            MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer = true;
         }
         else
         {
-            MonsterMain.Instance.IsWatchedByPlayer = false;
+            MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer = false;
         }
 
         Debug.DrawRay(transform.position, transform.forward * 500, Color.red);

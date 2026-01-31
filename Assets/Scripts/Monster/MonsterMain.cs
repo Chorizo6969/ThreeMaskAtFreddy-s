@@ -6,16 +6,16 @@ public class MonsterMain : MonoBehaviour
     public static MonsterMain Instance => instance;
 
     public MonsterStateBrain MonsterBrain;
-    public MonsterStateBrain MonsterTime;
+    public MonsterTimer MonsterTimer;
     public MonsterMovement MonsterMovement;
     public MonsterVisual MonsterVisual;
     public MonsterEncounter MonsterEncounter;
 
+    [Header("DefaultValues")] 
     public GameObject PlayerCam;
     public int DefaultRow = 3;
     public MaskState DefaultMaskState;
-
-    public bool IsWatchedByPlayer;
+    public float DefaultDelayBetweenActions = 8f;
 
     private void Awake()
     {
