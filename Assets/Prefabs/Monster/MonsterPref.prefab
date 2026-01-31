@@ -496,14 +496,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMain
   MonsterBrain: {fileID: 4046012502805756312}
-  MonsterTime: {fileID: 4046012502805756312}
+  MonsterTimer: {fileID: 0}
   MonsterMovement: {fileID: 7124279577804892754}
   MonsterVisual: {fileID: 9084432894410055605}
   MonsterEncounter: {fileID: 790916149630811731}
   PlayerCam: {fileID: 0}
   DefaultRow: 3
   DefaultMaskState: {fileID: 5412035401969533984}
-  IsWatchedByPlayer: 0
+  DefaultDelayBetweenActions: 8
 --- !u!114 &7124279577804892754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   _currentPos: {fileID: 0}
-  _valideDirection: 
+  ValideDirection: 
 --- !u!114 &4046012502805756312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4e1d5b10b6ac047bbc68367a6184b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterTimer
-  delayBetweenActions: 5
+  CurrentDelayBetweenActions: 0
 --- !u!114 &9084432894410055605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046f712559401e2498d3a371ddfb3ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterEncounter
+  IsWatchedByPlayer: 0
+  delayToRemoveEachFlee: 0.4
 --- !u!65 &6647002084428209128
 BoxCollider:
   m_ObjectHideFlags: 0
