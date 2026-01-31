@@ -7,7 +7,7 @@ public class Radio : MonoBehaviour
 
     public void Repair()
     {
-        Current += 0.00001f;
+        Current += 0.0003f;
 
         if (Current >= Goal)
         {
