@@ -12,7 +12,7 @@ public class MonsterMain : MonoBehaviour
     public MonsterEncounter MonsterEncounter;
 
     [Header("DefaultValues")] 
-    public GameObject PlayerCam;
+    public GameObject Player;
     public int DefaultRow = 3;
     public MaskState DefaultMaskState;
     public float DefaultDelayBetweenActions = 8f;

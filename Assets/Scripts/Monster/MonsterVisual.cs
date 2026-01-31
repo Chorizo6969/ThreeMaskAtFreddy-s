@@ -80,7 +80,7 @@ public class MonsterVisual : MonoBehaviour
 
     public void RotateToPlayer()
     {
-        transform.LookAt(MonsterMain.Instance.PlayerCam.transform.position);
+        transform.LookAt(MonsterMain.Instance.Player.transform.position);
     }
 
     [System.Serializable]
