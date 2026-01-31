@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _pos3List;
-    [SerializeField] private List<GameObject> _pos2List;
-    [SerializeField] private List<GameObject> _pos1List;
 
-    public int _currentPos;
+    [System.Serializable]
+    public class Row
+    {
+        public List<GameObject>positionsList;
+    }
+
+    [SerializeField] private List<Row> rows;
+
+    [SerializeField] private int _currentRow;
+    [SerializeField] private GameObject _currentPos;
+
 
     public void MonsterMoveTo(int pos)
     {
         MonsterMain.Instance.MonsterVisual.ChangeMonsterMesh(pos);
     }
 
-    public void MonsterMoveTowardPlayer()
-    {
-        transform.position = GetRandomPosFromList(GetNextPosList());
-    }
+    //public void MonsterFlee()
+    //{
+    //    transform.position = GetRandom3Pos();
+    //}
 
-    public void MonsterFlee()
-    {
-        transform.position = GetRandom3Pos();
-    }
-
-    private List<GameObject> GetNextPosList()
-    {
-        return _pos3List; //ici a finir
-    }
+    //private List<GameObject> GetNextPosList()
+    //{
+    //    return _pos3List; //ici a finir
+    //}
 
     private Vector3 GetRandomPosFromList(List<GameObject> posList)
     {
@@ -36,12 +38,13 @@ public class MonsterMovement : MonoBehaviour
         return posList[randomIndex].transform.position;
     }
 
-    private Vector3 GetRandom3Pos() {
-        int randomIndex = Random.Range(0, _pos3List.Count);
-        return _pos3List[randomIndex].transform.position;
+    //private Vector3 GetRandom3Pos()
+    //{
+    //    int randomIndex = Random.Range(0, _pos3List.Count);
+    //    return _pos3List[randomIndex].transform.position;
 
-    }
+    //}
 
-    
+
 
 }
