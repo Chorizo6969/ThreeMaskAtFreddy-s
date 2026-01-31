@@ -1,34 +1,39 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InteractRadio : MonoBehaviour
 {
     [SerializeField] private Radio _radio;
     [SerializeField] private PlayerMovement _playerMovement;
 
-    private bool wasHolding = false;
+    private bool _repair = false;
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.started && _playerMovement.Position == 1)
+        {
+            _repair = true;
+            _playerMovement.CanMove = false;
+            _playerMovement.SetCamera(_playerMovement.CamRadio);
+        }
+
+        if (context.canceled)
+        {
+            _repair = false;
+            _playerMovement.CanMove = true;
+            _playerMovement.SetCamera(_playerMovement.CamAvant);
+        }
+    }
 
     void FixedUpdate()
     {
-        OnRepair();
+        RepairRadio();
     }
 
-    void OnRepair()
+    void RepairRadio()
     {
-        bool holding = Input.GetKey(KeyCode.V) && _playerMovement.Position == 1;
+        if (!_repair) return;
 
-        if (holding)
-        {
-            wasHolding = true;
-            _playerMovement.SetCamera(_playerMovement.CamRadio);
-            _radio.Repair();
-        }
-
-        if (!holding && wasHolding)
-        {
-            wasHolding = false;
-
-            _playerMovement.SetCamera(_playerMovement.CamAvant);
-            _radio.Repair();
-        }
+        _radio.Repair();
     }
 }

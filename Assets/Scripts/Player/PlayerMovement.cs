@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,30 +8,40 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CinemachineCamera _camArriere;
     [SerializeField] private CinemachineCamera _camGauche;
     [SerializeField] private CinemachineCamera _camDroite;
-    [field : SerializeField] public CinemachineCamera CamRadio { get; private set; }
+    [field: SerializeField] public CinemachineCamera CamRadio { get; private set; }
     public int Position = 1;
+    public bool CanMove = true;
+    private Vector2 moveInput;
 
-    void Update()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!CanMove) return;
+
+        moveInput = context.ReadValue<Vector2>();
+        UpdateCamera();
+    }
+
+    private void UpdateCamera()
+    {
+        if (moveInput == Vector2.zero)
+            return;
+
+        if (moveInput.y > 0)
         {
             SetCamera(CamAvant);
             Position = 1;
         }
-
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (moveInput.y < 0)
         {
             SetCamera(_camArriere);
             Position = 4;
         }
-
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (moveInput.x < 0)
         {
             SetCamera(_camGauche);
             Position = 3;
         }
-
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (moveInput.x > 0)
         {
             SetCamera(_camDroite);
             Position = 2;
