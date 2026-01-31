@@ -15,7 +15,7 @@ public class Radio : MonoBehaviour
         if (Current >=_repairTime)
         {
             Current = _repairTime;
-            Debug.Log("Victoire");
+            UIManager.Instance.Win();
         }
     }
 }
