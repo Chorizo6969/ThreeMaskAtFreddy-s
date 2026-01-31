@@ -515,7 +515,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1103550341153633793
 MonoBehaviour:
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 0
-  IsWatched: 0
+  IsWatchedByPlayer: 0
   _renderer: {fileID: 7338294651116742248}
 --- !u!1 &2891591998444364985
 GameObject:
@@ -643,7 +643,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &260339511120656938
 MonoBehaviour:
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 1
-  IsWatched: 0
+  IsWatchedByPlayer: 0
   _renderer: {fileID: 7608886344775838517}
 --- !u!1 &2912619121196319566
 GameObject:
@@ -995,7 +995,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2982515064275249418
 MonoBehaviour:
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RowLookDetector
   DirectionType: 2
-  IsWatched: 0
+  IsWatchedByPlayer: 0
   _renderer: {fileID: 3777209241353696527}
 --- !u!1 &3558428044736675524
 GameObject:

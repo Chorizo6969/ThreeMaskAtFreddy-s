@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMain
   MonsterBrain: {fileID: 4046012502805756312}
-  MonsterTimer: {fileID: 0}
+  MonsterTimer: {fileID: 6123459468570785478}
   MonsterMovement: {fileID: 7124279577804892754}
   MonsterVisual: {fileID: 9084432894410055605}
   MonsterEncounter: {fileID: 790916149630811731}
@@ -625,7 +625,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.01, y: 4.64, z: 3.33}
+  m_Size: {x: 7, y: 7, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9157204205268764204
 GameObject:

@@ -60,8 +60,7 @@ public class MonsterTimer : MonoBehaviour
             }
             else
             {
-                //MonsterMain.Instance.MonsterEncounter.KillPlayer();
-                MonsterMain.Instance.MonsterEncounter.Flee();
+                MonsterMain.Instance.MonsterEncounter.KillPlayer();
             }
         }
 
