@@ -25,7 +25,6 @@ public class SessionHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
     public void StartTheGame()
     {
         UIManager.Instance.RemoveTitleScreen();
@@ -42,5 +41,6 @@ public class SessionHandler : MonoBehaviour
     public void StopTheGame()
     {
         GameStarted = false;
+        MonsterMain.Instance.MonsterTimer.StopTimer();
     }
 }
