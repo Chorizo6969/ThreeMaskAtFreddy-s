@@ -34,6 +34,9 @@ public class MonsterEncounter : MonoBehaviour
 
     public async UniTask Screamer()
     {
-        //MonsterMain.Instance.transform.DOMove(PlayerMain.Instance)
+        MonsterMain.Instance.transform.DOMove(PlayerMain.Instance.MonsterScreamerSocket.transform.position, 0.1f);
+        MonsterMain.Instance.transform.DOPunchScale(Vector3.one * 0.6f, 1f, 500, 5);
+        SoundManager.Instance.PlayerJumpscare();
+        await UniTask.Delay(1000);
     }
 }
