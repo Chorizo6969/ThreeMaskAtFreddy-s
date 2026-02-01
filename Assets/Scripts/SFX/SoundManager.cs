@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _equipMask;
     [SerializeField] private AudioClip _radioBug;
     [SerializeField] private AudioClip _jumpscareClip;
+    [SerializeField] private AudioClip _lightOffClip;
 
     [Header("List Sound")]
     [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
@@ -118,4 +119,6 @@ public class SoundManager : MonoBehaviour
     }
 
     public void PlayerJumpscare() => _audioSource.PlayOneShot(_jumpscareClip);
+
+    public void ChangeLightSound() => _audioSource.PlayOneShot(_jumpscareClip);
 }
