@@ -8,7 +8,7 @@ public class MonsterEncounter : MonoBehaviour
     public bool IsWatchedByPlayer;
     
 
-    [SerializeField] private float delayToRemoveEachFlee = 0.4f;
+    [SerializeField] private float delayToRemoveEachFlee = 1f;
 
     public bool CheckIsSamePlayerMask()
     {

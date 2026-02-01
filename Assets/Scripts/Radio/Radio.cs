@@ -17,6 +17,7 @@ public class Radio : MonoBehaviour
         {
             Current = _repairTime;
             UIManager.Instance.ShowWinPanel();
+            SessionHandler.Instance.StopTheGame();
         }
     }
 }
