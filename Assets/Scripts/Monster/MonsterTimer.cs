@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using DG.Tweening;
+using System;
+using System.Collections.Generic;
 
 public class MonsterTimer : MonoBehaviour
 {
@@ -24,7 +26,8 @@ public class MonsterTimer : MonoBehaviour
 
     private IEnumerator TimerRoutine()
     {
-        yield return new WaitForSeconds(CurrentDelayBetweenActions);
+        float randomF = UnityEngine.Random.Range(-1f, 1f);
+        yield return new WaitForSeconds(CurrentDelayBetweenActions + randomF);
 
         DoAction();
         StartTimer();
@@ -62,11 +65,13 @@ public class MonsterTimer : MonoBehaviour
             else
             {
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
+                StopTimer();
             }
         }
-
-        EffectManager.Instance.BlinkAllLane(0.7f);
-        MonsterMain.Instance.MonsterVisual.CallHideMonster(0.7f);
+        SoundManager.Instance.PlayRandomMonsterSound();
+        float randomF = UnityEngine.Random.Range(-0.2f, 0.2f);
+        EffectManager.Instance.BlinkAllLane(1 + randomF);
+        MonsterMain.Instance.MonsterVisual.CallHideMonster(randomF);
 
     }
 }

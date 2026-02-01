@@ -1,4 +1,6 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -6,8 +8,19 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance = null;
     public static SoundManager Instance => instance;
 
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private List<AudioClip> _soundList;
+    [Header("Audio Source")]
+    [SerializeField] private AudioSource _audioSource;
+
+    [Header("Clip")]
+    [SerializeField] private AudioClip _equipMask;
+
+    [Header("List Sound")]
+    [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
+    [SerializeField] private List<AudioClip> _eachSecondsSFXList;
+    [SerializeField] private List<AudioClip> _radioRepairSFXList;
+    [SerializeField] private List<AudioClip> _monsterMoveSFXList;
+
+    private CancellationTokenSource _radioCTS;
 
     private void Awake()
     {
@@ -23,10 +36,69 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void PlaySound(int soundIndex)
+    private void Start()
     {
-        if (soundIndex < 0 || soundIndex >= _soundList.Count) return;
-        audioSource.clip = _soundList[soundIndex];
-        audioSource.Play();
+        PlayRandomSound().Forget();
+        PlayRandomAmbianceSound().Forget();
     }
+
+    //------------------------------------------------BigSound
+
+    private async UniTask PlayRandomAmbianceSound()
+    {
+        while (true)
+        {
+            int soundIndex = Random.Range(0, _eachSecondsSFXList.Count - 1);
+            _audioSource.PlayOneShot(_eachSecondsSFXList[soundIndex]);
+
+            await UniTask.WaitForSeconds(3);
+        }
+    }
+
+    //------------------------------------------------ WATER
+
+    private async UniTask PlayRandomSound()
+    {
+        while (true)
+        {
+            int soundIndex = Random.Range(0, _audioTerrifingSFXList.Count - 1);
+            _audioSource.PlayOneShot(_audioTerrifingSFXList[soundIndex]);
+
+            int time = Random.Range(10, 30);
+            await UniTask.WaitForSeconds(time);
+        }
+    }
+
+    //----------------------------------------------- RADIO SOUND
+
+    public void PlayRadioSound()
+    {
+        _radioCTS = new CancellationTokenSource();
+        LoopRadioSound(_radioCTS.Token).Forget();
+    }
+
+    private async UniTask LoopRadioSound(CancellationToken token)
+    {
+        while (!token.IsCancellationRequested)
+        {
+            int soundIndex = Random.Range(0, _radioRepairSFXList.Count - 1);
+            _audioSource.PlayOneShot(_radioRepairSFXList[soundIndex]);
+
+            await UniTask.WaitForSeconds(2, cancellationToken: token);
+        }
+    }
+
+    public void StopRadioSound()
+    {
+        _radioCTS?.Cancel();
+        _radioCTS?.Dispose();
+    }
+
+    //---------------------------------------------------------------------- Mask Sound
+
+    public void PlayMaskSound() => _audioSource.PlayOneShot(_equipMask);
+
+    //---------------------------------------------------------------------- Monstre
+
+    public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterMoveSFXList.Count - 1)]);
 }
