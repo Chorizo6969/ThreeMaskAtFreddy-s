@@ -89,6 +89,8 @@ public class MonsterVisual : MonoBehaviour
         _currentMesh.SetActive(false);
         _currentMask.SetActive(false);
         yield return new WaitForSeconds(time);
+        MonsterMain.Instance.MonsterSound.PlayGrowl(SoundManager.Instance.GetRandomSoundFromList(SoundManager.Instance.MonsterGrowlSFXList));
+        MonsterMain.Instance.MonsterSound.PlayMovement(SoundManager.Instance.GetRandomSoundFromList(SoundManager.Instance.MonsterMoveSFXList));
         _currentMesh.SetActive(true);
         _currentMask.SetActive(true);
     }

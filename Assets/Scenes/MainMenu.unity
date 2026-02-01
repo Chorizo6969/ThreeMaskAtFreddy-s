@@ -1822,14 +1822,14 @@ RectTransform:
   m_GameObject: {fileID: 2124613256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 104524208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -150}
+  m_AnchoredPosition: {x: -200.9, y: -150}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2124613258
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Masked Frequency
+  m_text: Face The fear
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a01d38359c5934a42b3f59ca234d8eb8, type: 2}
   m_sharedMaterial: {fileID: 3601382448009398143, guid: a01d38359c5934a42b3f59ca234d8eb8, type: 2}

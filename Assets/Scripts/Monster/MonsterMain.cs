@@ -16,7 +16,7 @@ public class MonsterMain : MonoBehaviour
     public GameObject Player;
     public int DefaultRow = 3;
     public MaskState DefaultMaskState;
-    public float DefaultDelayBetweenActions = 8f;
+    public float DefaultDelayBetweenActions = 15f;
 
     private void Awake()
     {
