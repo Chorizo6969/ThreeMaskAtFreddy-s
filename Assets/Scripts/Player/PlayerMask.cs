@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,14 +13,23 @@ public class PlayerMask : MonoBehaviour
 
     public List<MaskHandler> _maskHandlers = new();
 
+    private bool _canSwitchMask = true;
+
+    private IEnumerator Cooldown(float cooldown)
+    {
+        _canSwitchMask = false;
+        yield return new WaitForSeconds(cooldown);
+        _canSwitchMask = true;
+    }
+
     private void Start()
     {
-        UpdateMaskEnum();    
+        UpdateMaskEnum();
     }
 
     public void EquipMask(int maskIndex)
     {
-        if (_maskHandlers[maskIndex].IsAnim) return;
+        if (_maskHandlers[maskIndex].IsAnim || !_canSwitchMask) return;
         if (currentMask != -1)
             RemoveMask();
 
@@ -35,6 +45,7 @@ public class PlayerMask : MonoBehaviour
         _maskHandlers[currentMask].OnDesequip();
         currentMask = -1;
         UpdateMaskEnum();
+        StartCoroutine(Cooldown(0.7f));
     }
 
     private void UpdateMaskEnum()
@@ -42,7 +53,7 @@ public class PlayerMask : MonoBehaviour
         switch (currentMask)
         {
             case 0:
-                CurrentMask = MaskType.Red; 
+                CurrentMask = MaskType.Red;
                 break;
 
             case 1:

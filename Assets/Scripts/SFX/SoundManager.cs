@@ -13,13 +13,14 @@ public class SoundManager : MonoBehaviour
 
     [Header("Clip")]
     [SerializeField] private AudioClip _equipMask;
+    [SerializeField] private AudioClip _radioBug;
 
     [Header("List Sound")]
     [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
     [SerializeField] private List<AudioClip> _eachSecondsSFXList;
     [SerializeField] private List<AudioClip> _radioRepairSFXList;
-    [SerializeField] private List<AudioClip> _monsterMoveSFXList;
-    [SerializeField] private List<AudioClip> _monsterGrownSFXList;
+    public List<AudioClip> MonsterMoveSFXList;
+    public List<AudioClip> MonsterGrowlSFXList;
 
     private CancellationTokenSource _radioCTS;
 
@@ -76,6 +77,8 @@ public class SoundManager : MonoBehaviour
     {
         _radioCTS = new CancellationTokenSource();
         LoopRadioSound(_radioCTS.Token).Forget();
+        _audioSource.clip = _radioBug;
+        _audioSource.Play();
     }
 
     private async UniTask LoopRadioSound(CancellationToken token)
@@ -91,6 +94,7 @@ public class SoundManager : MonoBehaviour
 
     public void StopRadioSound()
     {
+        _audioSource?.Stop();
         _radioCTS?.Cancel();
         _radioCTS?.Dispose();
     }
@@ -101,7 +105,14 @@ public class SoundManager : MonoBehaviour
 
     //---------------------------------------------------------------------- Monstre
 
-    public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterMoveSFXList.Count - 1)]); //déplacement
+    public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(MonsterMoveSFXList[Random.Range(0, MonsterMoveSFXList.Count - 1)]); //déplacement
 
-    public void PlayGrawlMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterGrownSFXList.Count - 1)]); //grognement
+    public void PlayGrawlMonsterSound() => _audioSource.PlayOneShot(MonsterMoveSFXList[Random.Range(0, MonsterGrowlSFXList.Count - 1)]); //grognement
+
+    public AudioClip GetRandomSoundFromList(List<AudioClip> audioList)
+    {
+        int randomIndex = Random.Range(0, audioList.Count);
+        AudioClip randomAudio = audioList[randomIndex];
+        return randomAudio;
+    }
 }

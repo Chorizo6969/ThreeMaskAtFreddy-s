@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlueMask_Mat
+  m_Name: AlphaBlueMask_Mat
   m_Shader: {fileID: -6465566751694194690, guid: 88e2ce511e1c8e742bf0f23fa30d1099, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -63,7 +63,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: -2.29
     - _CracksIntensity: 0.7
     - _Metallic: 0
     - _NoiseIntensity: 0.25

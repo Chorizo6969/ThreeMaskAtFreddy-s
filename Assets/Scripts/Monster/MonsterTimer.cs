@@ -67,7 +67,8 @@ public class MonsterTimer : MonoBehaviour
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
             }
         }
-        SoundManager.Instance.PlayRandomMonsterSound();
+        MonsterMain.Instance.MonsterSound.PlayGrowl(SoundManager.Instance.GetRandomSoundFromList(SoundManager.Instance.MonsterGrowlSFXList));
+        MonsterMain.Instance.MonsterSound.PlayMovement(SoundManager.Instance.GetRandomSoundFromList(SoundManager.Instance.MonsterMoveSFXList));
         float randomF = UnityEngine.Random.Range(-0.2f, 0.2f);
         EffectManager.Instance.BlinkAllLane(1 + randomF);
         MonsterMain.Instance.MonsterVisual.CallHideMonster(randomF);

@@ -10,6 +10,7 @@ public class MonsterMain : MonoBehaviour
     public MonsterMovement MonsterMovement;
     public MonsterVisual MonsterVisual;
     public MonsterEncounter MonsterEncounter;
+    public MonsterSound MonsterSound;
 
     [Header("DefaultValues")] 
     public GameObject Player;

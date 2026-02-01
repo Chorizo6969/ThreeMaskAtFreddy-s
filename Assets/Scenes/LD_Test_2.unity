@@ -738,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2763663010790672411, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
+      propertyPath: _radioBug
+      value: 
+      objectReference: {fileID: 8300000, guid: a93bc4563bf96d84d92289bcd86945ad, type: 3}
     - target: {fileID: 5325924662081983832, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -2254,6 +2258,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373537677625791975, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858655793644340439, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887256985309932945, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
