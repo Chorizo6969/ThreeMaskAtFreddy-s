@@ -68,8 +68,9 @@ public class MonsterTimer : MonoBehaviour
                 StopTimer();
             }
         }
-        float randomF = UnityEngine.Random.Range(0.1f, 0.3f);
-        EffectManager.Instance.BlinkAllLane(randomF);
+        SoundManager.Instance.PlayRandomMonsterSound();
+        float randomF = UnityEngine.Random.Range(-0.2f, 0.2f);
+        EffectManager.Instance.BlinkAllLane(1 + randomF);
         MonsterMain.Instance.MonsterVisual.CallHideMonster(randomF);
 
     }
