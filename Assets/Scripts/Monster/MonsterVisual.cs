@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
@@ -74,9 +75,22 @@ public class MonsterVisual : MonoBehaviour
                 Transform maskSocket = _currentMesh.transform.Find("MaskSocket");
                 _currentMask.transform.SetParent(maskSocket);
                 _currentMask.transform.localPosition = Vector3.zero;
+                _currentMask.transform.localScale = Vector3.one;
                 _currentMask.transform.localRotation = Quaternion.identity;
             }
         }
+    }
+
+    public void CallHideMonster(float time) => StartCoroutine(HideMonster(time));
+
+
+    private IEnumerator HideMonster(float time)
+    {
+        _currentMesh.SetActive(false);
+        _currentMask.SetActive(false);
+        yield return new WaitForSeconds(time);
+        _currentMesh.SetActive(true);
+        _currentMask.SetActive(true);
     }
 
     public void RotateToPlayer()

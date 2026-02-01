@@ -32,9 +32,9 @@ public class MonsterTimer : MonoBehaviour
 
     private void DoAction()
     {
+
         if (MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer)
         {
-            EffectManager.Instance.BlinkAllLight(0.7f);
             if (MonsterMain.Instance.MonsterEncounter.CheckIsSamePlayerMask())
             {
                 MonsterMain.Instance.MonsterEncounter.Flee();
@@ -64,6 +64,9 @@ public class MonsterTimer : MonoBehaviour
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
             }
         }
+
+        EffectManager.Instance.BlinkAllLane(0.7f);
+        MonsterMain.Instance.MonsterVisual.CallHideMonster(0.7f);
 
     }
 }

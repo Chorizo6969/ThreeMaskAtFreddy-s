@@ -3349,7 +3349,7 @@ PrefabInstance:
     - target: {fileID: 5420936340234875389, guid: 76c90b07a5d14d145a5d01611bdf3cd3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b11590070c8b3ca468cbae3411dc6eb6, type: 2}
+      objectReference: {fileID: 2100000, guid: 617982a941f761b4092368e53f736e66, type: 2}
     - target: {fileID: 7540172658195215271, guid: 76c90b07a5d14d145a5d01611bdf3cd3, type: 3}
       propertyPath: m_Name
       value: RedMask
@@ -3384,7 +3384,7 @@ PrefabInstance:
     - target: {fileID: 5402922421210754022, guid: aaa8aeea6efe82046a4cfbf604e6b6b9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 42181f3bb99418c4fa892c5055d89f21, type: 2}
+      objectReference: {fileID: 2100000, guid: 21e3e068544146942a7308a140f7528d, type: 2}
     - target: {fileID: 6176137594268334544, guid: aaa8aeea6efe82046a4cfbf604e6b6b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75
@@ -3451,7 +3451,7 @@ PrefabInstance:
     - target: {fileID: 8107216866893128430, guid: 31aa9ea9373a2d74bb2212852264560a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6a91cc409e1ac2443a6fb9afec22099c, type: 2}
+      objectReference: {fileID: 2100000, guid: 4405e04c4b4671a4f931f7cb365ffd9a, type: 2}
     - target: {fileID: 8341406775613127763, guid: 31aa9ea9373a2d74bb2212852264560a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
