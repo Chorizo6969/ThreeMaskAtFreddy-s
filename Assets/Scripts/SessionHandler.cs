@@ -41,5 +41,6 @@ public class SessionHandler : MonoBehaviour
     public void StopTheGame()
     {
         GameStarted = false;
+        MonsterMain.Instance.MonsterTimer.StopTimer();
     }
 }
