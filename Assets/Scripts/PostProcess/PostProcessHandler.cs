@@ -13,6 +13,7 @@ public class PostProcessHandler : MonoBehaviour
 
     // Specific settings
     private float _baseVignetteIntensity;
+    private Vignette _vignette;
 
     // Singleton
     #region Singleton
@@ -45,8 +46,8 @@ public class PostProcessHandler : MonoBehaviour
 
     private void Start()
     {
-        Volume.profile.TryGet(out Vignette vignette);
-        _baseVignetteIntensity = (float)vignette.intensity;
+        Volume.profile.TryGet(out _vignette);
+        _baseVignetteIntensity = (float)_vignette.intensity;
     }
 
     public void StartVignetteLoop()
@@ -85,13 +86,26 @@ public class PostProcessHandler : MonoBehaviour
         }
     }
 
+    public async void DoVignetteColor(Color newColor, float duration)
+    {
+        Sequence sequence = DOTween.Sequence().Pause();
+
+        DOGetter<Color> getter1 = () => (Color)_vignette.color;
+        DOSetter<Color> setter1 = c => _vignette.color.Override(c);
+
+        sequence
+            .Append(DOTween.To(getter1, setter1, newColor, duration).SetEase(Ease.Linear));
+
+        sequence.Play();
+    }
+
     private IEnumerator VignetteLoop()
     {
         while (true)
         {
-            VignettePulse(0.22f, 0.9f);
+            VignettePulse(0.32f, 0.9f);
             yield return new WaitForSeconds(0.9f);
-            VignettePulse(0.2f, 0.55f);
+            VignettePulse(0.3f, 0.55f);
             yield return new WaitForSeconds(0.55f);
         }
     }
@@ -99,6 +113,9 @@ public class PostProcessHandler : MonoBehaviour
     public async UniTask ResetVignette(float duration)
     {
         await ChangeVignette(_baseVignetteIntensity, duration);
+        DoVignetteColor(Color.black, duration);
+        StartCoroutine(VignetteLoop());
+
     }
     #endregion
 
@@ -115,8 +132,6 @@ public class PostProcessHandler : MonoBehaviour
             .Append(DOTween.To(getter1, setter1, newIntensity, duration).SetEase(Ease.Linear));
 
         sequence.Play();
-
-
     }
 }
 

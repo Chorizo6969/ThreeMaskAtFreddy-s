@@ -41,6 +41,18 @@ public class EffectManager : MonoBehaviour
         PostProcessHandler.Instance.StartVignetteLoop();
     }
 
+    public async void MaskVignetteFocus(Color maskColor)
+    {
+        PostProcessHandler.Instance.StopAllCoroutines();
+        PostProcessHandler.Instance.ChangeVignette(0.75f, 0.5f);
+        PostProcessHandler.Instance.DoVignetteColor(maskColor, 0.5f);
+    }
+
+    public async void ResetVignette()
+    {
+        PostProcessHandler.Instance.ResetVignette(0.3f);
+    }
+
     public void BlinkAllLane(float blinkTime)
     {
         LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
