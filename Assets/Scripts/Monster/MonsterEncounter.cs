@@ -18,7 +18,6 @@ public class MonsterEncounter : MonoBehaviour
 
     public async Task KillPlayer()
     {
-        Debug.Log("GameOver, playerDead");
         SessionHandler.Instance.StopTheGame();
         PlayerMain.Instance.PlayerMask.RemoveMask();
         await Screamer();
@@ -34,6 +33,9 @@ public class MonsterEncounter : MonoBehaviour
 
     public async UniTask Screamer()
     {
+        PlayerMain.Instance.transform.DORotateQuaternion(Quaternion.LookRotation(MonsterMain.Instance.transform.position - PlayerMain.Instance.transform.position), 0.2f);
+        await UniTask.Delay(200);
+        MonsterMain.Instance.transform.Rotate(Vector3.up, 0.05f);
         MonsterMain.Instance.transform.DOMove(PlayerMain.Instance.MonsterScreamerSocket.transform.position, 0.1f);
         MonsterMain.Instance.transform.DOPunchScale(Vector3.one * 0.6f, 1f, 500, 5);
         SoundManager.Instance.PlayerJumpscare();

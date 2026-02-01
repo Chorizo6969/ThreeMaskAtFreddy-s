@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void UpdateCamera()
+    public void UpdateCamera()
     {
         if (moveInput == Vector2.zero)
         {
