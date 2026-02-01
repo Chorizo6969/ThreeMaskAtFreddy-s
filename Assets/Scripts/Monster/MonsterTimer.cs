@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using DG.Tweening;
+using System;
+using System.Collections.Generic;
 
 public class MonsterTimer : MonoBehaviour
 {
@@ -64,9 +66,9 @@ public class MonsterTimer : MonoBehaviour
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
             }
         }
-
-        EffectManager.Instance.BlinkAllLane(0.7f);
-        MonsterMain.Instance.MonsterVisual.CallHideMonster(0.7f);
+        float randomF = UnityEngine.Random.Range(0.1f, 0.3f);
+        EffectManager.Instance.BlinkAllLane(randomF);
+        MonsterMain.Instance.MonsterVisual.CallHideMonster(randomF);
 
     }
 }
