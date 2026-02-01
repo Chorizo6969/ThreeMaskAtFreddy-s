@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Clip")]
     [SerializeField] private AudioClip _equipMask;
+    [SerializeField] private AudioClip _radioBug;
 
     [Header("List Sound")]
     [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
@@ -76,6 +77,8 @@ public class SoundManager : MonoBehaviour
     {
         _radioCTS = new CancellationTokenSource();
         LoopRadioSound(_radioCTS.Token).Forget();
+        _audioSource.clip = _radioBug;
+        _audioSource.Play();
     }
 
     private async UniTask LoopRadioSound(CancellationToken token)
@@ -91,6 +94,7 @@ public class SoundManager : MonoBehaviour
 
     public void StopRadioSound()
     {
+        _audioSource?.Stop();
         _radioCTS?.Cancel();
         _radioCTS?.Dispose();
     }

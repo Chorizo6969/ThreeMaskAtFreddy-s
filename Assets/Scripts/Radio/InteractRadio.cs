@@ -24,21 +24,21 @@ public class InteractRadio : MonoBehaviour
                 //_maskHandler.OnDesequip();
             }
 
+            SoundManager.Instance.PlayRadioSound();
             _repair = true;
             _playerMovement.CanMove = false;
             _playerMovement.SetCamera(_playerMovement.CamRadio);
             _playerMovement.Position = 5;
 
-            SoundManager.Instance.PlayRadioSound();
         }
 
         if (context.canceled)
         {
+            SoundManager.Instance.StopRadioSound();
             _repair = false;
             _playerMovement.CanMove = true;
             _playerMovement.SetCamera(_playerMovement.CamAvant);
             _playerMovement.Position = 1;
-            SoundManager.Instance.StopRadioSound();
         }
     }
 
