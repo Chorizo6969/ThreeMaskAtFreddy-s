@@ -2143,19 +2143,35 @@ PrefabInstance:
     - target: {fileID: 675971702422171648, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1438055746}
+      objectReference: {fileID: 1720244241}
+    - target: {fileID: 675971702422171648, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadCurrentLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 1915577676107398208, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1438055746}
+      objectReference: {fileID: 1720244241}
+    - target: {fileID: 1915577676107398208, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 2437260623008449636, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1438055746}
+      objectReference: {fileID: 1720244241}
+    - target: {fileID: 2437260623008449636, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadCurrentLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 2597926689822529146, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1438055746}
+      objectReference: {fileID: 1720244241}
+    - target: {fileID: 2597926689822529146, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 4485410134515842764, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -2257,6 +2273,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+--- !u!114 &1720244241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5693659119097204186, guid: 66883e5dd72ed1d49942224b52e74871, type: 3}
+  m_PrefabInstance: {fileID: 1720244240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7f90f7dc971ba4482e5f416cfdf8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadScene
 --- !u!1 &1739155637
 GameObject:
   m_ObjectHideFlags: 0
