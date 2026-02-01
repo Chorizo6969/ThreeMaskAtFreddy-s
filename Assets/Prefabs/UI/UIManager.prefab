@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SessionHandler, Assembly-CSharp
-        m_MethodName: StartTheGame
+      - m_Target: {fileID: 5693659119097204186}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: ReloadCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -954,16 +954,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SessionHandler, Assembly-CSharp
-        m_MethodName: StartTheGame
-        m_Mode: 1
+      - m_Target: {fileID: 5693659119097204186}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2883302820603767012
@@ -1155,6 +1155,7 @@ GameObject:
   - component: {fileID: 6027972338219018329}
   - component: {fileID: 8416520490322269524}
   - component: {fileID: 8681506240835942043}
+  - component: {fileID: 5693659119097204186}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -1262,6 +1263,18 @@ MonoBehaviour:
   _gameOverPanel: {fileID: 8858655793644340439}
   _winPanel: {fileID: 3846465108169238405}
   _titlePanel: {fileID: 8887256985309932945}
+--- !u!114 &5693659119097204186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485410134515842764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7f90f7dc971ba4482e5f416cfdf8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadScene
 --- !u!1 &5213833688366192133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,9 +1396,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SessionHandler, Assembly-CSharp
-        m_MethodName: StartTheGame
+      - m_Target: {fileID: 5693659119097204186}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: ReloadCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2137,16 +2150,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SessionHandler, Assembly-CSharp
-        m_MethodName: StartTheGame
-        m_Mode: 1
+      - m_Target: {fileID: 5693659119097204186}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8858655793644340439
