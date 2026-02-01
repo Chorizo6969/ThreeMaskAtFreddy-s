@@ -10,7 +10,6 @@ public class MonsterEncounter : MonoBehaviour
     {
         if(PlayerMain.Instance.PlayerMask.CurrentMask == MonsterMain.Instance.MonsterBrain.CurrentMask) return true;
         else return false;
-
     }
 
     public void KillPlayer()
