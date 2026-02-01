@@ -2319,7 +2319,7 @@ MonoBehaviour:
   _maskColor: {r: 0.17735851, g: 0.019743668, b: 0.019743668, a: 1}
   _playerHeadSocket: {fileID: 5759525915515368248}
   _tableMask: {fileID: 8861995485589036088}
-  _playerMask: {fileID: 1922294019639958629}
+  _playerMask: {fileID: 7842881271233242914}
   IsAnim: 0
 --- !u!114 &3778990640843655423
 MonoBehaviour:
@@ -2336,7 +2336,7 @@ MonoBehaviour:
   _maskColor: {r: 0, g: 0.3056603, b: 0, a: 1}
   _playerHeadSocket: {fileID: 5759525915515368248}
   _tableMask: {fileID: 1188573027291798400}
-  _playerMask: {fileID: 8796100337691417206}
+  _playerMask: {fileID: 1005651164252070787}
   IsAnim: 0
 --- !u!114 &6780817796469805598
 MonoBehaviour:
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   _maskColor: {r: 0, g: 0, b: 0.335849, a: 1}
   _playerHeadSocket: {fileID: 5759525915515368248}
   _tableMask: {fileID: 7132851598454918590}
-  _playerMask: {fileID: 1136893497141581941}
+  _playerMask: {fileID: 2534383677542327582}
   IsAnim: 0
 --- !u!114 &3380917965659706334
 MonoBehaviour:
