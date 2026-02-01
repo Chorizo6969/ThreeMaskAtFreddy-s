@@ -12,6 +12,8 @@ public class PlayerMain : MonoBehaviour
     public PlayerAnim PlayerAnim;
     public PlayerInputHandler PlayerInput;
 
+    public Transform MonsterScreamerSocket;
+
     public Camera PlayerCam;
 
     private void Awake()
