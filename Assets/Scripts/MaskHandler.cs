@@ -6,11 +6,12 @@ public class MaskHandler : MonoBehaviour
 {
     private Vector3 _tableBasePos;
     private Vector3 _playerBasePos;
+    private Color _baseEmissive;
 
     [SerializeField] Color _maskColor;
     [SerializeField] private Transform _playerHeadSocket;
     [SerializeField] private GameObject _tableMask;
-    [SerializeField] private GameObject _playerMask;
+    [SerializeField] private MeshRenderer _playerMask;
 
     public bool IsAnim;
 
@@ -18,6 +19,10 @@ public class MaskHandler : MonoBehaviour
     {
         _tableBasePos = _tableMask.transform.position;
         _playerBasePos = _playerMask.transform.position;
+        _baseEmissive = _playerMask.material.GetColor("_Emissive");
+        _playerMask.material.SetColor("_Emissive", Color.black);
+        _playerMask.material.SetFloat("_Alpha", 0);
+        _playerMask.enabled = false;
     }
 
     public void SlideOnEquip()
@@ -26,7 +31,9 @@ public class MaskHandler : MonoBehaviour
         Sequence sequence = DOTween.Sequence().Pause();
         sequence
             .Append(_tableMask.transform.DOMoveZ(-1.5f, 0.3f))
-            .Append(_playerMask.transform.DOMove(_playerHeadSocket.position, 0.5f).SetEase(Ease.OutCubic))
+            .AppendCallback(() => _playerMask.enabled = true)
+            .Insert(0.2f, _playerMask.material.DOColor(_baseEmissive, "_Emissive", 0.6f))
+            .Insert(0.6f, _playerMask.material.DOFloat(0.2f, "_Alpha", 0.45f))
             .AppendCallback(() => EffectManager.Instance.MaskVignetteFocus(_maskColor))
             .OnComplete(() => IsAnim = false);
 
@@ -41,7 +48,9 @@ public class MaskHandler : MonoBehaviour
         Sequence sequence = DOTween.Sequence().Pause();
         sequence
             .AppendCallback(() => EffectManager.Instance.ResetVignette())
-            .Append(_playerMask.transform.DOMove(_playerBasePos, 0.6f))
+            .Append(_playerMask.material.DOFloat(0, "_Alpha", 0.6f))
+            .Insert(0.2f, _playerMask.material.DOColor(Color.black, "_Emissive", 0.6f))
+            .InsertCallback(0.6f, () => _playerMask.enabled = false)
             .Append(_tableMask.transform.DOMoveZ(_tableBasePos.z, 0.3f))
             .OnComplete(() => IsAnim = false);
 
