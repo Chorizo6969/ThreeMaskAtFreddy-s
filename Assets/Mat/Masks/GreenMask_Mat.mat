@@ -63,6 +63,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _CracksIntensity: 0.7
     - _Metallic: 0
     - _NoiseIntensity: 0.25
