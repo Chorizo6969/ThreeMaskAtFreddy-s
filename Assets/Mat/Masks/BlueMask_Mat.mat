@@ -65,14 +65,14 @@ Material:
     m_Floats:
     - _CracksIntensity: 0.7
     - _Metallic: 0
-    - _NoiseIntensity: 1.65
+    - _NoiseIntensity: 0.25
     - _NormalStrength: 0.015
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.15
     - _normalstr: 0.02
     m_Colors:
-    - _BaseColor: {r: 0.76212883, g: 0.9874344, b: 0.9924528, a: 1}
+    - _BaseColor: {r: 0.6973668, g: 0.69151294, b: 0.90943396, a: 1}
     - _Emissive: {r: 0, g: 0.11387727, b: 0.32941177, a: 1}
     - _NoiseTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
