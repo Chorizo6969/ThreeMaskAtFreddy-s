@@ -120,5 +120,5 @@ public class SoundManager : MonoBehaviour
 
     public void PlayerJumpscare() => _audioSource.PlayOneShot(_jumpscareClip);
 
-    public void ChangeLightSound() => _audioSource.PlayOneShot(_jumpscareClip);
+    public void ChangeLightSound() => _audioSource.PlayOneShot(_lightOffClip);
 }

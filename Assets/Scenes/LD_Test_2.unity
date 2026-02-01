@@ -994,6 +994,10 @@ PrefabInstance:
       propertyPath: _radioBug
       value: 
       objectReference: {fileID: 8300000, guid: a93bc4563bf96d84d92289bcd86945ad, type: 3}
+    - target: {fileID: 2763663010790672411, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
+      propertyPath: _jumpscareClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bdd2734d63bec14c8904fabf71bb348, type: 3}
     - target: {fileID: 5325924662081983832, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -2056,7 +2060,7 @@ Transform:
   m_GameObject: {fileID: 649980001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.7224, z: 0}
+  m_LocalPosition: {x: -10.80304, y: -6.7224, z: 0}
   m_LocalScale: {x: 1, y: 0.47905, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2831,7 +2835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b06c51e3a49510448082884c6cc7b17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.89696
+      value: -50.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b06c51e3a49510448082884c6cc7b17, type: 3}
       propertyPath: m_LocalPosition.y

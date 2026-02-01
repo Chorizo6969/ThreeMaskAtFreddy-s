@@ -56,6 +56,7 @@ public class EffectManager : MonoBehaviour
 
     public void BlinkAllLane(float blinkTime)
     {
+        SoundManager.Instance.ChangeLightSound();
         LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
@@ -64,6 +65,7 @@ public class EffectManager : MonoBehaviour
     public void BlinkAllLight(float blinkTime)
     {
         Debug.Log("AllLight");
+        SoundManager.Instance.ChangeLightSound();
         LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);

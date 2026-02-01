@@ -39,7 +39,7 @@ public class MonsterTimer : MonoBehaviour
         if (!SessionHandler.Instance.GameStarted) return;
         float randomF = UnityEngine.Random.Range(-0.2f, 0.2f);
         if (MonsterMain.Instance.MonsterMovement.CurrentRow == 1) EffectManager.Instance.BlinkAllLight(randomF);
-        else EffectManager.Instance.BlinkAllLane(CurrentDelayBetweenActions/1.5f + randomF);
+        else EffectManager.Instance.BlinkAllLane(CurrentDelayBetweenActions/2 + randomF);
 
         if (MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer)
         {
@@ -72,6 +72,6 @@ public class MonsterTimer : MonoBehaviour
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
             }
         }
-        MonsterMain.Instance.MonsterVisual.CallHideMonster(CurrentDelayBetweenActions/1.5f + randomF);
+        MonsterMain.Instance.MonsterVisual.CallHideMonster(CurrentDelayBetweenActions/2 + randomF);
     }
 }

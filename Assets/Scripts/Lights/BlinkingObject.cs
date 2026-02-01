@@ -17,7 +17,6 @@ public class BlinkingObject : MonoBehaviour
     {
         _componentToBlink.enabled = active;
         _objectToBlink.SetActive(active);
-        SoundManager.Instance.ChangeLightSound();
     }
 
     public void TurnInfiniteBlink(bool active)
