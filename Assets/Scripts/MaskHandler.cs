@@ -21,6 +21,8 @@ public class MaskHandler : MonoBehaviour
         _playerBasePos = _playerMask.transform.position;
         _baseEmissive = _playerMask.material.GetColor("_Emissive");
         _playerMask.material.SetColor("_Emissive", Color.black);
+        _playerMask.material.SetFloat("_Alpha", 0);
+        _playerMask.enabled = false;
     }
 
     public void SlideOnEquip()
@@ -29,8 +31,9 @@ public class MaskHandler : MonoBehaviour
         Sequence sequence = DOTween.Sequence().Pause();
         sequence
             .Append(_tableMask.transform.DOMoveZ(-1.5f, 0.3f))
-            .Append(_playerMask.material.DOFloat(0.2f, "_Alpha", 0.45f))
+            .AppendCallback(() => _playerMask.enabled = true)
             .Insert(0.2f, _playerMask.material.DOColor(_baseEmissive, "_Emissive", 0.6f))
+            .Insert(0.6f, _playerMask.material.DOFloat(0.2f, "_Alpha", 0.45f))
             .AppendCallback(() => EffectManager.Instance.MaskVignetteFocus(_maskColor))
             .OnComplete(() => IsAnim = false);
 
@@ -47,6 +50,7 @@ public class MaskHandler : MonoBehaviour
             .AppendCallback(() => EffectManager.Instance.ResetVignette())
             .Append(_playerMask.material.DOFloat(0, "_Alpha", 0.6f))
             .Insert(0.2f, _playerMask.material.DOColor(Color.black, "_Emissive", 0.6f))
+            .InsertCallback(0.6f, () => _playerMask.enabled = false)
             .Append(_tableMask.transform.DOMoveZ(_tableBasePos.z, 0.3f))
             .OnComplete(() => IsAnim = false);
 
