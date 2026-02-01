@@ -2698,6 +2698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1653149222351193558, guid: 7a563738e329bb34d81858b39efaf056, type: 3}
+      propertyPath: GameStarted
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5308302622177519869, guid: 7a563738e329bb34d81858b39efaf056, type: 3}
       propertyPath: m_Name
       value: SessionHandler

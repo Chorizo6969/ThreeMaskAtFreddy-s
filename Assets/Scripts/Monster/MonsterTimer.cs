@@ -11,6 +11,7 @@ public class MonsterTimer : MonoBehaviour
     private Coroutine _timerCoroutine;
     public void StartTimer()
     {
+        if (!SessionHandler.Instance.GameStarted) return;
         StopTimer();
         _timerCoroutine = StartCoroutine(TimerRoutine());
     }
@@ -35,7 +36,7 @@ public class MonsterTimer : MonoBehaviour
 
     private void DoAction()
     {
-
+        if (!SessionHandler.Instance.GameStarted) return;
         if (MonsterMain.Instance.MonsterEncounter.IsWatchedByPlayer)
         {
             if (MonsterMain.Instance.MonsterEncounter.CheckIsSamePlayerMask())
