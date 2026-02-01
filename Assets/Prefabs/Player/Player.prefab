@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb177bbfa797514fbb037239077c30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Radio
-  _repairTime: 120
+  _repairTime: 60
   _slider: {fileID: 777487920562076770}
   Current: 0
 --- !u!1 &8796100337691417206
