@@ -45,10 +45,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bcc642a7bf78648b4479944196dc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  audioSource: {fileID: 6685544383153224482}
-  _soundList:
-  - {fileID: 8300000, guid: 5dc65348e14fda44e9608ede49e00f56, type: 3}
-  - {fileID: 8300000, guid: f9fe4279aced18045ba3afd70a45bf0d, type: 3}
+  _audioSource: {fileID: 6685544383153224482}
+  _equipMask: {fileID: 8300000, guid: 8af6a7a1eb9bbbe4eb4d6814ce2b196f, type: 3}
+  _audioTerrifingSFXList:
+  - {fileID: 8300000, guid: d73c21a9f2c66f04da6ae461fe4cadcf, type: 3}
+  - {fileID: 8300000, guid: 47a9ee8ea2f789f4cad3d313105783eb, type: 3}
+  _eachSecondsSFXList:
+  - {fileID: 8300000, guid: d6a5748fe591fa241bc156457384bb4e, type: 3}
+  - {fileID: 8300000, guid: 69ebbbba12d0b354d87a03359afe5f13, type: 3}
+  - {fileID: 8300000, guid: 649e97c3f5718504db65cbc32157b954, type: 3}
+  _radioRepairSFXList:
+  - {fileID: 8300000, guid: fbc554993cdfaa04d818f5441d891a1e, type: 3}
+  - {fileID: 8300000, guid: fe81b22defee65f43af240f9cdfde16e, type: 3}
+  - {fileID: 8300000, guid: bd0a1460a70e77e45a2c2dae86cd59fd, type: 3}
+  _monsterMoveSFXList:
+  - {fileID: 8300000, guid: a5f13c8cf1d174943904a29a2ac7369e, type: 3}
+  - {fileID: 8300000, guid: 21b04098f19e5764ab9f20fe756bacc1, type: 3}
+  - {fileID: 8300000, guid: 84efb45bb7b94d84d802809a1bac4890, type: 3}
+  - {fileID: 8300000, guid: 8e2f5a4442a08cf4695665b761914767, type: 3}
 --- !u!82 &6685544383153224482
 AudioSource:
   m_ObjectHideFlags: 0

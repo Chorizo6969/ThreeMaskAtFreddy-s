@@ -28,6 +28,8 @@ public class InteractRadio : MonoBehaviour
             _playerMovement.CanMove = false;
             _playerMovement.SetCamera(_playerMovement.CamRadio);
             _playerMovement.Position = 5;
+
+            SoundManager.Instance.PlayRadioSound();
         }
 
         if (context.canceled)
@@ -36,6 +38,7 @@ public class InteractRadio : MonoBehaviour
             _playerMovement.CanMove = true;
             _playerMovement.SetCamera(_playerMovement.CamAvant);
             _playerMovement.Position = 1;
+            SoundManager.Instance.StopRadioSound();
         }
     }
 
