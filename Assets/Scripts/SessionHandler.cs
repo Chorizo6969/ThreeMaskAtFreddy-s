@@ -9,8 +9,6 @@ public class SessionHandler : MonoBehaviour
     private static SessionHandler instance = null;
     public static SessionHandler Instance => instance;
 
-    [SerializeField] Canvas _titleScreen;
-
     public bool GameStarted = false;
 
     private void Awake()
@@ -27,13 +25,10 @@ public class SessionHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
-    {
-        _titleScreen.gameObject.SetActive(true);
-    }
+
     public void StartTheGame()
     {
-        _titleScreen.gameObject.SetActive(false);
+        UIManager.Instance.RemoveTitleScreen();
         GameStarted = true;
 
         MonsterMain.Instance.MonsterTimer.StartTimer();
