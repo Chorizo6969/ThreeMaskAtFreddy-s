@@ -104,4 +104,11 @@ public class SoundManager : MonoBehaviour
     public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterMoveSFXList.Count - 1)]); //déplacement
 
     public void PlayGrawlMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterGrownSFXList.Count - 1)]); //grognement
+
+    public AudioClip GetRandomSoundFromList(List<AudioClip> audioList)
+    {
+        int randomIndex = Random.Range(0, audioList.Count);
+        AudioClip randomAudio = audioList[randomIndex];
+        return randomAudio;
+    }
 }
