@@ -178,6 +178,7 @@ MonoBehaviour:
   _audioSource: {fileID: 6685544383153224482}
   _equipMask: {fileID: 8300000, guid: 8af6a7a1eb9bbbe4eb4d6814ce2b196f, type: 3}
   _radioBug: {fileID: 8300000, guid: a93bc4563bf96d84d92289bcd86945ad, type: 3}
+  _jumpscareClip: {fileID: 8300000, guid: e4398c3ab255ba94995c92c6d4482b3d, type: 3}
   _audioTerrifingSFXList:
   - {fileID: 8300000, guid: d73c21a9f2c66f04da6ae461fe4cadcf, type: 3}
   - {fileID: 8300000, guid: 47a9ee8ea2f789f4cad3d313105783eb, type: 3}

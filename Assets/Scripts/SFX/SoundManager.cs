@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
     [Header("Clip")]
     [SerializeField] private AudioClip _equipMask;
     [SerializeField] private AudioClip _radioBug;
+    [SerializeField] private AudioClip _jumpscareClip;
 
     [Header("List Sound")]
     [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
@@ -115,4 +116,6 @@ public class SoundManager : MonoBehaviour
         AudioClip randomAudio = audioList[randomIndex];
         return randomAudio;
     }
+
+    public void PlayerJumpscare() => _audioSource.PlayOneShot(_jumpscareClip);
 }
