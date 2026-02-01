@@ -18,8 +18,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private List<AudioClip> _audioTerrifingSFXList;
     [SerializeField] private List<AudioClip> _eachSecondsSFXList;
     [SerializeField] private List<AudioClip> _radioRepairSFXList;
-    [SerializeField] private List<AudioClip> _monsterMoveSFXList;
-    [SerializeField] private List<AudioClip> _monsterGrownSFXList;
+    public List<AudioClip> MonsterMoveSFXList;
+    public List<AudioClip> MonsterGrowlSFXList;
 
     private CancellationTokenSource _radioCTS;
 
@@ -101,9 +101,9 @@ public class SoundManager : MonoBehaviour
 
     //---------------------------------------------------------------------- Monstre
 
-    public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterMoveSFXList.Count - 1)]); //déplacement
+    public void PlayRandomMonsterSound() => _audioSource.PlayOneShot(MonsterMoveSFXList[Random.Range(0, MonsterMoveSFXList.Count - 1)]); //déplacement
 
-    public void PlayGrawlMonsterSound() => _audioSource.PlayOneShot(_monsterMoveSFXList[Random.Range(0, _monsterGrownSFXList.Count - 1)]); //grognement
+    public void PlayGrawlMonsterSound() => _audioSource.PlayOneShot(MonsterMoveSFXList[Random.Range(0, MonsterGrowlSFXList.Count - 1)]); //grognement
 
     public AudioClip GetRandomSoundFromList(List<AudioClip> audioList)
     {
