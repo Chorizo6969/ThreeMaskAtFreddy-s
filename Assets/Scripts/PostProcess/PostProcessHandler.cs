@@ -9,7 +9,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PostProcessHandler : MonoBehaviour
 {
-    public Volume Volume { get; private set; }
+    [field:SerializeField] public Volume Volume { get; private set; }
 
     // Specific settings
     private float _baseVignetteIntensity;
@@ -40,8 +40,6 @@ public class PostProcessHandler : MonoBehaviour
             _instance = this;
             Debug.Log("PostProcessHandler instance <color=#58ed7d>created</color>");
         }
-
-        Volume = Camera.main.GetComponentInChildren<Volume>();
     }
     #endregion
 
@@ -51,8 +49,7 @@ public class PostProcessHandler : MonoBehaviour
         _baseVignetteIntensity = (float)vignette.intensity;
     }
 
-    [ContextMenu("Truc")]
-    public void Truc()
+    public void StartVignetteLoop()
     {
         StartCoroutine(VignetteLoop());
     }
