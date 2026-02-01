@@ -36,6 +36,10 @@ public class EffectManager : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        PostProcessHandler.Instance.StartVignetteLoop();
+    }
 
     public void BlinkAllLane(float blinkTime)
     {
