@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 821782631563828781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4570836617773513447}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: ReloadCurrentLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &872628717298177122
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4134521716051280396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4570836617773513447}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: ReloadCurrentLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4485410134515842764
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +690,7 @@ GameObject:
   - component: {fileID: 6027972338219018329}
   - component: {fileID: 8416520490322269524}
   - component: {fileID: 8681506240835942043}
+  - component: {fileID: 4570836617773513447}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -771,6 +796,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   _gameOverPanel: {fileID: 8063949669170151907}
   _winPanel: {fileID: 8674506094623670801}
+--- !u!114 &4570836617773513447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485410134515842764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7f90f7dc971ba4482e5f416cfdf8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadScene
 --- !u!1 &4826964363135446835
 GameObject:
   m_ObjectHideFlags: 0
