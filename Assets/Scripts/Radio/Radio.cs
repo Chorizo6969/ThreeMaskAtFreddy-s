@@ -15,7 +15,7 @@ public class Radio : MonoBehaviour
         if (Current >=_repairTime)
         {
             Current = _repairTime;
-            UIManager.Instance.Win();
+            UIManager.Instance.ShowWinPanel();
         }
     }
 }

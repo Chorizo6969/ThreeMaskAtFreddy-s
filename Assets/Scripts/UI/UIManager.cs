@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _winPanel;
+    [SerializeField] private GameObject _titlePanel;
 
     private void Awake()
     {
@@ -22,13 +23,18 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void GameOver()
+    public void ShowGameOverPanel()
     {
         _gameOverPanel.SetActive(true);
     }
 
-    public void Win()
+    public void ShowWinPanel()
     {
         _winPanel.SetActive(true);
+    }
+
+    public void RemoveTitleScreen()
+    {
+        _titlePanel.SetActive(false);
     }
 }
