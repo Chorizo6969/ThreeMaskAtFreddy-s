@@ -22,9 +22,12 @@ public class SessionHandler : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        StartTheGame();
+    }
 
     public void StartTheGame()
     {

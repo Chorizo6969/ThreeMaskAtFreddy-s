@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void ShowGameOverPanel()

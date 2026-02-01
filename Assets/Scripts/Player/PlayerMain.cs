@@ -25,6 +25,5 @@ public class PlayerMain : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 }

@@ -16,7 +16,6 @@ public class LoadScene : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void LoadLevel(string levelName)
