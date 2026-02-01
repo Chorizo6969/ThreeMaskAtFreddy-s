@@ -65,7 +65,7 @@ public class MonsterTimer : MonoBehaviour
             }
         }
 
-        EffectManager.Instance.BlinkAllLight(0.7f);
+        EffectManager.Instance.BlinkAllLane(0.7f);
         MonsterMain.Instance.MonsterVisual.CallHideMonster(0.7f);
 
     }
