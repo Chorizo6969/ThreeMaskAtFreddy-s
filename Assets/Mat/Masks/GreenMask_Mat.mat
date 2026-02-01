@@ -65,7 +65,7 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _CracksIntensity: 0.7
-    - _Metallic: 0
+    - _Metallic: 4.63
     - _NoiseIntensity: 0.25
     - _NormalStrength: 0.015
     - _QueueControl: 0
