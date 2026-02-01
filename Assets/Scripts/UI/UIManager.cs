@@ -22,6 +22,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if(!_titlePanel.activeSelf) _titlePanel.SetActive(true);
+    }
+
     public void ShowGameOverPanel()
     {
         _gameOverPanel.SetActive(true);

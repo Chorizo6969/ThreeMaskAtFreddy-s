@@ -16,6 +16,7 @@ public class MonsterEncounter : MonoBehaviour
     public void KillPlayer()
     {
         Debug.Log("GameOver, playerDead");
+        SessionHandler.Instance.StopTheGame();
         UIManager.Instance.ShowGameOverPanel();
     }
 

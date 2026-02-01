@@ -22,11 +22,7 @@ public class SessionHandler : MonoBehaviour
         {
             instance = this;
         }
-    }
-
-    private void Start()
-    {
-        StartTheGame();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void StartTheGame()
@@ -45,5 +41,6 @@ public class SessionHandler : MonoBehaviour
     public void StopTheGame()
     {
         GameStarted = false;
+        MonsterMain.Instance.MonsterTimer.StopTimer();
     }
 }

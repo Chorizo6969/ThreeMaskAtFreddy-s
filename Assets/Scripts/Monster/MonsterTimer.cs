@@ -15,7 +15,7 @@ public class MonsterTimer : MonoBehaviour
         _timerCoroutine = StartCoroutine(TimerRoutine());
     }
 
-    private void StopTimer()
+    public void StopTimer()
     {
         if (_timerCoroutine != null)
         {
@@ -65,7 +65,6 @@ public class MonsterTimer : MonoBehaviour
             else
             {
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
-                StopTimer();
             }
         }
         SoundManager.Instance.PlayRandomMonsterSound();
