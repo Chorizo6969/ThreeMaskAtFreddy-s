@@ -28,7 +28,6 @@ public class MonsterMain : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
 
         //Init ref for visual
         MonsterVisual.InitMeshReferences();
