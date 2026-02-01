@@ -23,6 +23,11 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        if(!_titlePanel.activeSelf) _titlePanel.SetActive(true);
+    }
+
     public void ShowGameOverPanel()
     {
         _gameOverPanel.SetActive(true);

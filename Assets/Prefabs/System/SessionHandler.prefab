@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135cacf75532a6d4fb737b4b617633da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SessionHandler
-  _titleScreen: {fileID: 0}
   GameStarted: 0

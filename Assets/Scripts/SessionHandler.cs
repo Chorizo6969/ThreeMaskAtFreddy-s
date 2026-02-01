@@ -25,7 +25,6 @@ public class SessionHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
     public void StartTheGame()
     {
         UIManager.Instance.RemoveTitleScreen();
