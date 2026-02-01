@@ -4174,65 +4174,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1289814399381924564, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1289814399381924564, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9808071
-      objectReference: {fileID: 0}
-    - target: {fileID: 1289814399381924564, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5424528
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365647371240031015, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7784
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365647371240031015, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7784
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365647371240031015, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5568
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365647371240031015, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.263
-      objectReference: {fileID: 0}
-    - target: {fileID: 1502689535189587813, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.987
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834540570754154095, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0029646
-      objectReference: {fileID: 0}
-    - target: {fileID: 2278570114489175289, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.987
-      objectReference: {fileID: 0}
     - target: {fileID: 6160875940643317408, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396266280854452179, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396266280854452179, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8241868
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396266280854452179, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8357477701949827981, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.027
       objectReference: {fileID: 0}
     - target: {fileID: 8436186067886858854, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
       propertyPath: m_AnchorMax.y
