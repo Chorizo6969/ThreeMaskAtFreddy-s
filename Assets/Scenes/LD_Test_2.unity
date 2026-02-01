@@ -738,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2763663010790672411, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
+      propertyPath: _radioBug
+      value: 
+      objectReference: {fileID: 8300000, guid: a93bc4563bf96d84d92289bcd86945ad, type: 3}
     - target: {fileID: 5325924662081983832, guid: c2544da56a7f285449c38793c356f0b2, type: 3}
       propertyPath: m_Name
       value: SoundManager
