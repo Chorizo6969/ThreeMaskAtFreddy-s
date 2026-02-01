@@ -29,12 +29,12 @@ public class MaskHandler : MonoBehaviour
             .OnComplete(() => IsAnim = false);
 
         sequence.Play();
-        SoundManager.Instance.PlaySound(0);
+        SoundManager.Instance.PlayMaskSound();
     }
 
     public void OnDesequip()
     {
-        SoundManager.Instance.PlaySound(1);
+        SoundManager.Instance.PlayMaskSound();
         IsAnim = true;
         Sequence sequence = DOTween.Sequence().Pause();
         sequence
