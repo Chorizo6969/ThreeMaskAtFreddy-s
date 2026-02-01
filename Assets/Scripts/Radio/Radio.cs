@@ -10,6 +10,7 @@ public class Radio : MonoBehaviour
 
     public void Repair()
     {
+        if (!SessionHandler.Instance.GameStarted) return;
         Current += Time.deltaTime;
         _slider.value = Current / _repairTime;
 

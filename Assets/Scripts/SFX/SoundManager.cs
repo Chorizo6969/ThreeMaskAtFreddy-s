@@ -84,7 +84,7 @@ public class SoundManager : MonoBehaviour
 
     private async UniTask LoopRadioSound(CancellationToken token)
     {
-        while (!token.IsCancellationRequested)
+        while (!token.IsCancellationRequested && SessionHandler.Instance.GameStarted)
         {
             int soundIndex = Random.Range(0, _radioRepairSFXList.Count - 1);
             _audioSource.PlayOneShot(_radioRepairSFXList[soundIndex]);
