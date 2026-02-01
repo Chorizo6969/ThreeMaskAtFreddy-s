@@ -36,13 +36,16 @@ public class EffectManager : MonoBehaviour
     }
     #endregion
 
-
-    public void BlinkAllLight(float blinkTime)
+    private void Start()
     {
-        if(LightHandler._backLaneLight != null) LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
-        if (LightHandler._deskLight != null) LightHandler._deskLight.CallBlinkOnce(blinkTime);
-        if (LightHandler._rightLaneLight != null) LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
-        if (LightHandler._leftLaneLight != null) LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
+        PostProcessHandler.Instance.StartVignetteLoop();
+    }
+
+    public void BlinkAllLane(float blinkTime)
+    {
+        LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
+        LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
+        LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
 
     }
 }

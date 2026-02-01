@@ -20,10 +20,8 @@ public class MonsterEncounter : MonoBehaviour
 
     public void Flee()
     {
-        //Debug.Log("Je flee");
         MonsterMain.Instance.MonsterBrain.SwitchToNewMaskState(MonsterMain.Instance.MonsterBrain.GetRandomMaskState());
         MonsterMain.Instance.MonsterMovement.MonsterGoToThisRow(3);
         if(MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions > 4f) MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions = MonsterMain.Instance.MonsterTimer.CurrentDelayBetweenActions - delayToRemoveEachFlee;
-        //La lampe du bureau clignote, le monstre se casse
     }
 }
