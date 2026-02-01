@@ -26,7 +26,8 @@ public class MonsterTimer : MonoBehaviour
 
     private IEnumerator TimerRoutine()
     {
-        yield return new WaitForSeconds(CurrentDelayBetweenActions);
+        float randomF = UnityEngine.Random.Range(-1f, 1f);
+        yield return new WaitForSeconds(CurrentDelayBetweenActions + randomF);
 
         DoAction();
         StartTimer();
@@ -64,6 +65,7 @@ public class MonsterTimer : MonoBehaviour
             else
             {
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
+                StopTimer();
             }
         }
         float randomF = UnityEngine.Random.Range(0.1f, 0.3f);
