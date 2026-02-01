@@ -568,11 +568,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1440928421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &312114533 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3267318372352545320, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
-  m_PrefabInstance: {fileID: 1783257354}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &343370292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -619,6 +614,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250740392783600440, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3181389667474045957, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7966361263507196214, guid: 881530b4b69a0e341a1bb2317015a579, type: 3}
@@ -2386,10 +2385,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 32264800}
-    - target: {fileID: 5682339796277009989, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
-      propertyPath: PlayerCam
-      value: 
-      objectReference: {fileID: 312114533}
     - target: {fileID: 7124279577804892754, guid: 09cce64e48a31ed45890ea3aba8163de, type: 3}
       propertyPath: 'rowPair.Array.data[0].PositionsList.Array.data[0]'
       value: 
@@ -2627,10 +2622,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1529972831427322565, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 21e3e068544146942a7308a140f7528d, type: 2}
+    - target: {fileID: 1788741831784722919, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4405e04c4b4671a4f931f7cb365ffd9a, type: 2}
     - target: {fileID: 6160875940643317408, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6441055685198503522, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 617982a941f761b4092368e53f736e66, type: 2}
     - target: {fileID: 8436186067886858854, guid: ba00d5ee25179344f8a22c18385f7a02, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
