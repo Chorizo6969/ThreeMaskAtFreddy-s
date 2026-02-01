@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -58,6 +59,17 @@ public class EffectManager : MonoBehaviour
         LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
         LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
-
     }
+
+    public void BlinkAllLight(float blinkTime)
+    {
+        Debug.Log("AllLight");
+        LightHandler._backLaneLight.CallBlinkOnce(blinkTime);
+        LightHandler._rightLaneLight.CallBlinkOnce(blinkTime);
+        LightHandler._leftLaneLight.CallBlinkOnce(blinkTime);
+        LightHandler._deskLight.CallBlinkOnce(blinkTime);
+        LightHandler.StartCoroutine(LightHandler.BlinkPointLight(blinkTime));
+    }
+
+
 }
