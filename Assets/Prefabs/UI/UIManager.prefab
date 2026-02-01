@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5693659119097204186}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: ReloadCurrentLevel
+        m_MethodName: ReloadCurrentLevelButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -956,7 +956,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5693659119097204186}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LoadLevelButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1398,7 +1398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5693659119097204186}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: ReloadCurrentLevel
+        m_MethodName: ReloadCurrentLevelButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5693659119097204186}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LoadLevelButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

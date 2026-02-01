@@ -1,4 +1,6 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
@@ -18,19 +20,40 @@ public class LoadScene : MonoBehaviour
         }
     }
 
-    public void LoadLevel(string levelName)
+
+    public void LoadLevelButton(string levelName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
+        LoadLevelAsync(levelName).Forget();
     }
 
-    public void ReloadCurrentLevel()
+    public void ReloadCurrentLevelButton()
     {
-        var currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.name);
+        ReloadCurrentLevelAsync().Forget();
     }
 
-    public void Quit()
+    public void QuitButton()
     {
+        QuitAsync().Forget();
+    }
+
+    private async UniTask LoadLevelAsync(string levelName)
+    {
+        TransitionGame.Instance.CloseScene();
+        await UniTask.WaitForSeconds(3f);
+        SceneManager.LoadScene(levelName);
+    }
+
+    private async UniTask ReloadCurrentLevelAsync()
+    {
+        TransitionGame.Instance.CloseScene();
+        await UniTask.WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private async UniTask QuitAsync()
+    {
+        TransitionGame.Instance.CloseScene();
+        await UniTask.WaitForSeconds(3f);
         Application.Quit();
     }
 }
