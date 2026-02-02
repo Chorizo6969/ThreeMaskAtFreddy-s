@@ -57,6 +57,7 @@ public class MonsterTimer : MonoBehaviour
                 else
                 {
                     MonsterMain.Instance.MonsterEncounter.KillPlayer();
+                    return;
                 }
             }
         }
@@ -70,6 +71,7 @@ public class MonsterTimer : MonoBehaviour
             else
             {
                 MonsterMain.Instance.MonsterEncounter.KillPlayer();
+                return;
             }
         }
         MonsterMain.Instance.MonsterVisual.CallHideMonster(CurrentDelayBetweenActions/2 + randomF);

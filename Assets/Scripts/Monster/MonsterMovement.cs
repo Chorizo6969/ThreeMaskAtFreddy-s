@@ -84,7 +84,7 @@ public class MonsterMovement : MonoBehaviour
         DirectionType _randomDirectionType = ValideDirection[_randomIndex];
 
         switch (_randomDirectionType)
-            {
+        {
             case DirectionType.Right:
                 _currentPos = posDict[row][0];
                 break;
@@ -94,7 +94,24 @@ public class MonsterMovement : MonoBehaviour
             case DirectionType.Back:
                 _currentPos = posDict[row][2];
                 break;
-            }
-            return _currentPos.transform.position;
-    } 
+        }
+        return _currentPos.transform.position;
+    }
+
+    // Retourne un tuple qui contient le DirectionType et le int correspondant au couloir actuel du monstre. A pour seul objectif de changer sur la bonne cam.
+    public (DirectionType, int) GetCurrentDirection()
+    {
+        switch (_currentPos.name)
+        {
+            case string s when s.Contains("Back"):
+                return (DirectionType.Back, 2);
+
+            case string s when s.Contains("Left"):
+                return (DirectionType.Back, 1);
+
+            case string s when s.Contains("Right"):
+                return (DirectionType.Back, 3);
+        }
+        return (0, 0);
+    }
 }

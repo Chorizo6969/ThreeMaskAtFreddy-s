@@ -31,24 +31,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void UpdateCamera()
+    public void UpdateCamera(int forcedCamera = -1)
     {
-        if (moveInput == Vector2.zero)
+        if (moveInput == Vector2.zero && forcedCamera == -1)
         {
             SetCamera(CamAvant);
             Position = 1;
         }
-        else if (moveInput.y < 0)
+        else if (moveInput.y < 0 || forcedCamera == 2)
         {
             SetCamera(_camArriere);
             Position = 4;
         }
-        else if (moveInput.x < 0)
+        else if (moveInput.x < 0 || forcedCamera == 1)
         {
             SetCamera(_camGauche);
             Position = 3;
         }
-        else if (moveInput.x > 0)
+        else if (moveInput.x > 0 || forcedCamera == 3)
         {
             SetCamera(_camDroite);
             Position = 2;
