@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec007f6962f8d74e993ffc7164dd666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessHandler
-  <Volume>k__BackingField: {fileID: 0}
+  <Volume>k__BackingField: {fileID: 1254920335}
 --- !u!1 &952712606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1432,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15352518}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadLevelButton
+        m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1743,8 +1743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a4dfbce7cdae49bb8685bc420df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionGame
-  _panel: {fileID: 152837092}
-  _fadeDuration: 2.5
 --- !u!4 &1445898431
 Transform:
   m_ObjectHideFlags: 0
