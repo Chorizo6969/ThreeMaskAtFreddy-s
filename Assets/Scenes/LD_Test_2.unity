@@ -756,7 +756,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1604818400180654085, guid: c0d738d2084804649b2e7a29f0bfa8b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1529250100}
   m_SourcePrefab: {fileID: 100100000, guid: c0d738d2084804649b2e7a29f0bfa8b3, type: 3}
 --- !u!1 &207611537
 GameObject:
@@ -1354,6 +1357,11 @@ Light:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27b416ff6683f294a92d30b80f87734c, type: 3}
   m_PrefabInstance: {fileID: 492054178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &400624895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1604818400180654085, guid: c0d738d2084804649b2e7a29f0bfa8b3, type: 3}
+  m_PrefabInstance: {fileID: 167280956}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &420095578
 GameObject:
@@ -3608,7 +3616,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2963930958990480835, guid: c0d738d2084804649b2e7a29f0bfa8b3, type: 3}
   m_PrefabInstance: {fileID: 167280956}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 400624895}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45606240df95f364facca8e0ac0f3926, type: 3}
@@ -3619,6 +3627,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2962745562934559492, guid: c0d738d2084804649b2e7a29f0bfa8b3, type: 3}
   m_PrefabInstance: {fileID: 167280956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1529250100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400624895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8450a9461784a478ae1b99b497ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwingingObject
+  _minRotationOffset: {x: 0, y: 0, z: -1.5}
+  _maxRotationOffset: {x: 0, y: 0, z: 1.5}
+  _swingDuration: 2
+  _swingEase: 4
 --- !u!1001 &1536489190
 PrefabInstance:
   m_ObjectHideFlags: 0

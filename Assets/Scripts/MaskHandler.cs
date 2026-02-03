@@ -34,7 +34,7 @@ public class MaskHandler : MonoBehaviour
             .AppendCallback(() => _playerMask.enabled = true)
             .Insert(0.2f, _playerMask.material.DOColor(_baseEmissive, "_Emissive", 0.6f))
             .Insert(0.6f, _playerMask.material.DOFloat(0.2f, "_Alpha", 0.45f))
-            .AppendCallback(() => EffectManager.Instance.MaskVignetteFocus(_maskColor))
+            .InsertCallback(0.45f, () => EffectManager.Instance.MaskVignetteFocus(_maskColor))
             .OnComplete(() => IsAnim = false);
 
         sequence.Play();

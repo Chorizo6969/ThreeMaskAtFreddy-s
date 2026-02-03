@@ -39,7 +39,7 @@ public class EffectManager : MonoBehaviour
 
     private void Start()
     {
-        PostProcessHandler.Instance.StartVignetteLoop();
+        //PostProcessHandler.Instance.StartVignetteLoop();
     }
 
     public async void MaskVignetteFocus(Color maskColor)
