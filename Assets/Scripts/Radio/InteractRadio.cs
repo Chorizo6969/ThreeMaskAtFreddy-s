@@ -29,7 +29,6 @@ public class InteractRadio : MonoBehaviour
             _playerMovement.CanMove = false;
             _playerMovement.SetCamera(_playerMovement.CamRadio);
             _playerMovement.Position = 5;
-
         }
 
         if (context.canceled)
@@ -50,7 +49,7 @@ public class InteractRadio : MonoBehaviour
     void RepairRadio()
     {
         if (!_repair) return;
-
+        if (Mathf.Floor(_radio.Current) % 10 == 0) _radio.PlayElectricityVFX();
         _radio.Repair();
     }
 }
